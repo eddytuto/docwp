@@ -203,3 +203,52 @@ Text Domain: 2023-4w4
 ```
 
 ---
+
+### L'extension LiveSass pour VScode
+
+> Live Sass Compiler est une extension pour Visual Studio Code (VSCode) qui permet de compiler automatiquement votre code Sass (Syntactically Awesome Stylesheets) en CSS à chaque modification. Avec Live Sass Compiler, vous pouvez écrire du code Sass et voir les résultats immédiatement sans avoir à utiliser un terminal ou un autre outil de compilation externe.
+
+### Comment utiliser Live Sass Compiler dans VSCode :
+
+- Installez l'extension Live Sass Compiler à partir du marketplace de VSCode.
+- Ouvrez un projet contenant du code Sass dans VSCode.
+- Cliquez sur le bouton "Live Sass Compiler" dans la barre d'outils ou appuyez sur Ctrl + Shift + P (Windows) ou Command + Shift + P (MacOS) pour ouvrir la palette de commandes.
+- Sélectionnez "Watch Sass" pour activer la compilation en direct.
+- Modifiez votre code Sass et enregistrez les modifications. VSCode compilera automatiquement votre code Sass en CSS et vous pourrez voir les résultats mis à jour dans votre navigateur web.
+
+### Configuratin de Live Sass
+
+Vous pouvez configurer Live Sass Compiler à l'aide du fichier settings.json dans Visual Studio Code (VSCode) pour définir certaines options de compilation. Voici les étapes à suivre :
+
+- Cliquez sur "File" dans la barre de menu et sélectionnez "Preferences" -> "Settings".
+- Cliquez sur "Edit in settings.json" en bas à gauche de la fenêtre des paramètres.
+- Ajoutez les options de configuration suivantes à votre fichier settings.json :
+
+  > {
+  > "liveSassCompile.settings.formats": [
+
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "~/.."
+      }
+
+  ],
+  "liveSassCompile.settings.autoprefix": [],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "window.zoomLevel": 1,
+  "liveSassCompile.settings.includeItems": []
+  }
+  "**formats**" définit le format de sortie du fichier CSS compilé. Vous pouvez choisir entre "**expanded**", "**compressed**" et "**compact**".
+  "**extensionName**" définit l'extension du fichier CSS compilé.
+  "**savePath**" définit le chemin où le fichier CSS compilé sera enregistré.
+  "**generateMap**" définit si un fichier sourcemap doit être généré pour le fichier CSS compilé.
+  "**autoprefix**" définit les préfixes automatiques à ajouter au code CSS compilé.
+
+- Ouvrez votre fichier Sass et cliquez sur le bouton **"Live Sass Compiler**" dans la barre d'outils ou appuyez sur **Ctrl + Shift + P** (Windows) ou **Command + Shift + P** (MacOS) pour ouvrir la palette de commandes.
+- Sélectionnez "**Watch Sass**" pour activer la compilation en direct.

@@ -108,6 +108,30 @@ Il y a plusieurs raisons pour lesquelles il peut être avantageux d'utiliser nor
 
 ---
 
+### box-sizing
+
+- La propriété CSS box-sizing définit comment les tailles des boîtes sont calculées dans un document HTML. Elle permet de contrôler si les dimensions d'une boîte incluent ou non les dimensions des bordures et de la marge.
+
+- Il existe deux valeurs couramment utilisées pour la propriété box-sizing :
+
+> **content-box** : Cette valeur est la valeur par défaut pour les boîtes en CSS. Elle signifie que les dimensions d'une boîte sont calculées uniquement en fonction de son contenu, c'est-à-dire que les bordures et les marges ne sont pas incluses dans les dimensions de la boîte.
+
+> **border-box** : Cette valeur signifie que les dimensions d'une boîte incluent tout son contenu, ainsi que les bordures et les marges. Cela signifie que, même si vous ajoutez des bordures ou de la marge à une boîte, ses dimensions resteront les mêmes.
+
+```
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+```
+
 ### Organisation de la structure Sass pour notre thème
 
 Il est important de noter que cette liste est une suggestion et que l'organisation peut varier en fonction des besoins spécifiques de votre thème. Il est important de maintenir un ordre logique et clair pour faciliter la maintenance et l'évolution du thème.
@@ -224,31 +248,33 @@ Vous pouvez configurer Live Sass Compiler à l'aide du fichier settings.json dan
 - Cliquez sur "Edit in settings.json" en bas à gauche de la fenêtre des paramètres.
 - Ajoutez les options de configuration suivantes à votre fichier settings.json :
 
-> {
-> "liveSassCompile.settings.formats": [
->
->      {
->        "format": "expanded",
->        "extensionName": ".css",
->        "savePath": "~/.."
->      }
->
-> ],
-> "liveSassCompile.settings.autoprefix": [],
-> "liveServer.settings.donotShowInfoMsg": true,
-> "workbench.editor.enablePreview": true,
-> "workbench.editor.untitled.hint": "hidden",
-> "editor.formatOnSave": true,
-> "editor.defaultFormatter": "esbenp.prettier-vscode",
-> "editor.formatOnPaste": true,
-> "window.zoomLevel": 1,
-> "liveSassCompile.settings.includeItems": []
-> }
-> "**formats**" définit le format de sortie du fichier CSS compilé. Vous pouvez choisir entre "**expanded**", "**compressed**" et "**compact**".
-> "**extensionName**" définit l'extension du fichier CSS compilé.
-> "**savePath**" définit le chemin où le fichier CSS compilé sera enregistré.
-> "**generateMap**" définit si un fichier sourcemap doit être généré pour le fichier CSS compilé.
-> "**autoprefix**" définit les préfixes automatiques à ajouter au code CSS compilé.
+```
+ {
+ "liveSassCompile.settings.formats": [
+
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "~/.."
+      }
+
+ ],
+ "liveSassCompile.settings.autoprefix": [],
+ "liveServer.settings.donotShowInfoMsg": true,
+ "workbench.editor.enablePreview": true,
+ "workbench.editor.untitled.hint": "hidden",
+ "editor.formatOnSave": true,
+ "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "editor.formatOnPaste": true,
+ "window.zoomLevel": 1,
+ "liveSassCompile.settings.includeItems": []
+ }
+ "**formats**" définit le format de sortie du fichier CSS compilé. Vous pouvez choisir entre "**expanded**", "**compressed**" et "**compact**".
+ "**extensionName**" définit l'extension du fichier CSS compilé.
+ "**savePath**" définit le chemin où le fichier CSS compilé sera enregistré.
+ "**generateMap**" définit si un fichier sourcemap doit être généré pour le fichier CSS compilé.
+ "**autoprefix**" définit les préfixes automatiques à ajouter au code CSS compilé.
+```
 
 - Ouvrez votre fichier Sass et cliquez sur le bouton **"Live Sass Compiler**" dans la barre d'outils ou appuyez sur **Ctrl + Shift + P** (Windows) ou **Command + Shift + P** (MacOS) pour ouvrir la palette de commandes.
 - Sélectionnez "**Watch Sass**" pour activer la compilation en direct.

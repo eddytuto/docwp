@@ -16,69 +16,87 @@ Il y a plusieurs raisons pour lesquelles il peut être avantageux d'utiliser Sas
 
 Voici quelques instructions de base pour utiliser SCSS (Sass indente) :
 
-- **Variables** : Les variables SCSS permettent de stocker des valeurs pour une utilisation ultérieure dans le code. On peut les définir en utilisant le signe dollar suivi du nom de la variable. Exemple :
-  `$primary-color: #ff0000;`
+- **Variables**
+- La variable css est définit dans un fichier \_couleur.scss et sera inclus dans style.scss. Ici l'objectif est d'inclure la définition de la variable dans le sélecteur :root qui permettra ensuite d'utiliser cette variable dans une autre règle de style.
+
+```
+:root {
+  --couleur-body: #f6feff;
+}
+body {
+  background-color: var(--couleur-body);
+}
 
 - **Mixins** : Les mixins SCSS permettent de regrouper des règles CSS pour une utilisation répétitive. On peut les définir en utilisant le mot-clé @mixin suivi d'un nom de mixin. Exemple :
 
 ```
-  @mixin border-radius {
-  border-radius: 5px;
-  }
-```
 
-```
-/* /////////////////////////////////////////////////////////////////      mixin général pour les liens */
-@mixin links($couleur, $couleur--visited, $couleur--hover) {
-  color: $couleur;
-
-  &:visited {
-    color: $couleur--visited;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $couleur--hover;
-  }
-
-  &:focus {
-    outline: thin dotted;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
+@mixin border-radius {
+border-radius: 5px;
 }
+
+```
+
+```
+
+/_ ///////////////////////////////////////////////////////////////// mixin général pour les liens _/
+@mixin links($couleur, $couleur--visited, $couleur--hover) {
+color: $couleur;
+
+&:visited {
+color: $couleur--visited;
+}
+
+&:hover,
+&:focus,
+&:active {
+color: $couleur--hover;
+}
+
+&:focus {
+outline: thin dotted;
+}
+
+&:hover,
+&:active {
+outline: 0;
+}
+}
+
 ```
 
 - **Inclusions** : Les inclusions SCSS permettent d'inclure les règles d'un mixin dans un autre en utilisant le mot-clé @include suivi du nom du mixin. Exemple :
 
 ```
+
 .my-element {
- @include border-radius;
- }
+@include border-radius;
+}
+
 ```
 
 - **Boucles** : Les boucles SCSS permettent de répéter des règles CSS à l'aide de boucles. On peut utiliser les boucles pour générer des règles CSS à partir de variables. Exemple :
 
 ```
-  @for $i from 1 through 5 {
+
+@for $i from 1 through 5 {
     .item -#{$i} {
-    width: 2em \* $i;
-    }
-  }
+width: 2em \* $i;
+}
+}
+
 ```
 
 - **Conditions** : Les conditions SCSS permettent de conditionner l'application de règles CSS en fonction d'une valeur. On peut utiliser les conditions pour générer des règles CSS à partir de variables. Exemple :
 
 ```
- @if $custom-variable == true {
-   .my-element {
-   background-color: #ff0000;
-  }
- }
+
+@if $custom-variable == true {
+.my-element {
+background-color: #ff0000;
+}
+}
+
 ```
 
 Ce sont des instructions de base de SCSS, il existe d'autres fonctionnalités et instructions avancées qui peuvent être utilisées pour rendre le développement plus efficace et facile à maintenir.
@@ -119,17 +137,19 @@ Il y a plusieurs raisons pour lesquelles il peut être avantageux d'utiliser nor
 > **border-box** : Cette valeur signifie que les dimensions d'une boîte incluent tout son contenu, ainsi que les bordures et les marges. Cela signifie que, même si vous ajoutez des bordures ou de la marge à une boîte, ses dimensions resteront les mêmes.
 
 ```
-/* Inherit box-sizing to more easily change it's value on a component level.
-@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+
+/_ Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ _/
+_,
+_::before,
+\*::after {
+box-sizing: inherit;
 }
 
 html {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
+
 ```
 
 ### Organisation de la structure Sass pour notre thème
@@ -151,55 +171,58 @@ Il est important de noter que cette liste est une suggestion et que l'organisati
 - Chaque fichier **_.scss_** doit commencer par le caractère ** «\_»** pour empècher que les fichiers scss soient compilé en fichier **_.css._** On veut plutôt créer un seul fichier **_style.css_** qui contiendra l'importation de chacune des **_complations_** des fichiers **_.scss_** de la **_structure Sass globale_**.
 
 ```
+
 h1 {
-  font-size: clamp(0.75rem, -0.75rem + 4.8vw, 3.75rem);
+font-size: clamp(0.75rem, -0.75rem + 4.8vw, 3.75rem);
 }
 h2 {
-  font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
+font-size: clamp(0.625rem, -0.3125rem + 3vw, 2.5rem);
 }
 h3 {
-  font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
+font-size: clamp(0.5625rem, -0.25rem + 2.6vw, 2.1875rem);
 }
 h4 {
-  font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
+font-size: clamp(0.5rem, -0.1875rem + 2.2vw, 1.875rem);
 }
 h5 {
-  font-size: clamp(0.5rem, -0.0313rem + 1.7vw, 1.5625rem);
+font-size: clamp(0.5rem, -0.0313rem + 1.7vw, 1.5625rem);
 }
 h6 {
-  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
+font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.25rem);
 }
 
 P {
-  font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
+font-size: clamp(0.5rem, 0.125rem + 1.2vw, 1.1rem);
 }
 
 h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  /* font-family: "Slackey", cursive; */
+font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+/_ font-family: "Slackey", cursive; _/
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+"Lucida Sans", Arial, sans-serif;
 }
+
 ```
 
 ### Exemple du fichier style.scss
 
 ```
-/*
+
+/_
 Theme Name: 2023-4w4
 Theme URI: https://referenced.ca
 Author: Eddy Martin
@@ -210,20 +233,21 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 2023-4w4
-*/
+_/
 
 @import "variables/dimension";
 @import "normalize/normalize";
 @import "normalize/box-sizing";
 
-/* --------------------------------------------- base */
+/_ --------------------------------------------- base _/
 @import "base/heading";
 @import "base/espacement";
 @import "base/lien";
 @import "base/list";
 
-/* --------------------------------------------- composant */
+/_ --------------------------------------------- composant _/
 @import "composant/entete";
+
 ```
 
 ---
@@ -249,8 +273,9 @@ Vous pouvez configurer Live Sass Compiler à l'aide du fichier settings.json dan
 - Ajoutez les options de configuration suivantes à votre fichier settings.json :
 
 ```
- {
- "liveSassCompile.settings.formats": [
+
+{
+"liveSassCompile.settings.formats": [
 
       {
         "format": "expanded",
@@ -258,23 +283,25 @@ Vous pouvez configurer Live Sass Compiler à l'aide du fichier settings.json dan
         "savePath": "~/.."
       }
 
- ],
- "liveSassCompile.settings.autoprefix": [],
- "liveServer.settings.donotShowInfoMsg": true,
- "workbench.editor.enablePreview": true,
- "workbench.editor.untitled.hint": "hidden",
- "editor.formatOnSave": true,
- "editor.defaultFormatter": "esbenp.prettier-vscode",
- "editor.formatOnPaste": true,
- "window.zoomLevel": 1,
- "liveSassCompile.settings.includeItems": []
- }
- "**formats**" définit le format de sortie du fichier CSS compilé. Vous pouvez choisir entre "**expanded**", "**compressed**" et "**compact**".
- "**extensionName**" définit l'extension du fichier CSS compilé.
- "**savePath**" définit le chemin où le fichier CSS compilé sera enregistré.
- "**generateMap**" définit si un fichier sourcemap doit être généré pour le fichier CSS compilé.
- "**autoprefix**" définit les préfixes automatiques à ajouter au code CSS compilé.
+],
+"liveSassCompile.settings.autoprefix": [],
+"liveServer.settings.donotShowInfoMsg": true,
+"workbench.editor.enablePreview": true,
+"workbench.editor.untitled.hint": "hidden",
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnPaste": true,
+"window.zoomLevel": 1,
+"liveSassCompile.settings.includeItems": []
+}
+"**formats**" définit le format de sortie du fichier CSS compilé. Vous pouvez choisir entre "**expanded**", "**compressed**" et "**compact**".
+"**extensionName**" définit l'extension du fichier CSS compilé.
+"**savePath**" définit le chemin où le fichier CSS compilé sera enregistré.
+"**generateMap**" définit si un fichier sourcemap doit être généré pour le fichier CSS compilé.
+"**autoprefix**" définit les préfixes automatiques à ajouter au code CSS compilé.
+
 ```
 
 - Ouvrez votre fichier Sass et cliquez sur le bouton **"Live Sass Compiler**" dans la barre d'outils ou appuyez sur **Ctrl + Shift + P** (Windows) ou **Command + Shift + P** (MacOS) pour ouvrir la palette de commandes.
 - Sélectionnez "**Watch Sass**" pour activer la compilation en direct.
+```

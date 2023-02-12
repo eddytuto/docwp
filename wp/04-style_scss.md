@@ -26,11 +26,11 @@ Voici quelques instructions de base pour utiliser SCSS (Sass indente) :
 body {
   background-color: var(--couleur-body);
 }
+```
 
 - **Mixins** : Les mixins SCSS permettent de regrouper des règles CSS pour une utilisation répétitive. On peut les définir en utilisant le mot-clé @mixin suivi d'un nom de mixin. Exemple :
 
 ```
-
 @mixin border-radius {
 border-radius: 5px;
 }
@@ -38,7 +38,6 @@ border-radius: 5px;
 ```
 
 ```
-
 /_ ///////////////////////////////////////////////////////////////// mixin général pour les liens _/
 @mixin links($couleur, $couleur--visited, $couleur--hover) {
 color: $couleur;
@@ -304,4 +303,7 @@ Vous pouvez configurer Live Sass Compiler à l'aide du fichier settings.json dan
 
 - Ouvrez votre fichier Sass et cliquez sur le bouton **"Live Sass Compiler**" dans la barre d'outils ou appuyez sur **Ctrl + Shift + P** (Windows) ou **Command + Shift + P** (MacOS) pour ouvrir la palette de commandes.
 - Sélectionnez "**Watch Sass**" pour activer la compilation en direct.
+
+```
+
 ```

@@ -21,3 +21,7 @@ VALUES (1, 'Titre de l\'article', 'Description du cours', 'publish', 'post');
 ```
 
 Dans cette requête, le champ "ID" n'est pas spécifié, mais MySQL générera automatiquement un nouvel ID unique pour le nouvel enregistrement.
+
+### sur Visual Code «VSD» pour alterner entre wrap et no-wrap
+
+> [alt]-z

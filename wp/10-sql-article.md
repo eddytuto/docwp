@@ -25,3 +25,26 @@ Dans cette requête, le champ "ID" n'est pas spécifié, mais MySQL générera a
 ### sur Visual Code «VSD» pour alterner entre wrap et no-wrap
 
 > [alt]-z
+
+---
+
+### Faire le ménage de la table wp_posts
+
+- Supprimer les révisions d'articles :
+  > DELETE FROM wp_posts WHERE post_type = 'revision';
+- Supprimer les articles dans la corbeille :
+  > DELETE FROM wp_posts WHERE post_type = 'post' AND post_status = 'trash';
+- Supprimer les commentaires dans la corbeille :
+  > DELETE FROM wp_comments WHERE comment_approved = 'trash';
+- Supprimer les commentaires considérés comme spam :
+  > DELETE FROM wp_comments WHERE comment_approved = 'spam';
+- Supprimer les commentaires non associés à un article :
+  > DELETE FROM wp_comments WHERE comment_post_ID = 0;
+- Supprimer les données de suivi des liens (pingbacks et trackbacks) :
+  > DELETE FROM wp_comments WHERE comment_type = 'pingback';
+  > DELETE FROM wp_comments WHERE comment_type = 'trackback';
+- Supprimer les métadonnées inutilisées :
+  > DELETE FROM wp_postmeta WHERE meta_key = '' OR meta_value = '';
+- Optimiser la table des commentaires :
+  > OPTIMIZE TABLE wp_comments;
+- Notez que ces requêtes doivent être exécutées avec prudence, car elles suppriment définitivement des données de la base de données. Il est recommandé de faire une sauvegarde de la base de données avant de les exécuter.

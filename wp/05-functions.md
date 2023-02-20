@@ -178,6 +178,17 @@ wp_enqueue_style(
 
 ---
 
+### Pour enfiler la police noto-emoji
+
+```
+function enqueue_noto_emoji() {
+    wp_enqueue_style( 'noto-emoji', 'https://fonts.googleapis.com/css?family=Noto+Emoji' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_noto_emoji' );
+```
+
+---
+
 ### Comment enregistrer les menus
 
 - register_nav_menus() // dans functions.php

@@ -27,12 +27,12 @@ Par exemple, si un développeur souhaite afficher seulement les publications de 
  * Dans ce cas çi nous filtrons la requête de la page d'accueil
  * @param WP_query  $query la requête principal de WP
  */
-function igc31w_modifie_requete_principal( $query ) {
+function cidweb_modifie_requete_principal( $query ) {
 if ( $query->is_home() && $query->is_main_query() && ! is_admin() ) {
   $query->set( 'category_name', 'note4w4' );
   $query->set( 'orderby', 'title' );
   $query->set( 'order', 'ASC' );
   }
  }
- add_action( 'pre_get_posts', 'igc31w_modifie_requete_principal' );
+ add_action( 'pre_get_posts', 'cidweb_modifie_requete_principal' );
 ```

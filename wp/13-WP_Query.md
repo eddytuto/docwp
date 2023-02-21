@@ -26,6 +26,42 @@
 - date_query : Permet de spécifier une requête personnalisée pour les dates de publication.
 - tax_query : Permet de spécifier une requête personnalisée pour les catégories et les tags.
 
+### Liste des principales fonctions utilisées avec WP_Query
+
+> Voici une liste des fonctions couramment utilisées avec WP_Query pour récupérer et afficher des publications personnalisées :
+
+- new WP_Query() : Crée une nouvelle instance de la classe WP_Query pour effectuer la recherche de publications.
+
+- have_posts() : Retourne true si des publications sont disponibles dans la boucle de recherche, sinon false.
+
+- the_post() : Définit la publication suivante disponible dans la boucle de recherche pour être utilisée avec les fonctions de template WordPress.
+
+- get_posts() : Récupère un tableau d'objets de publications personnalisées.
+
+- wp_reset_query() : Réinitialise la requête précédente après l'utilisation de WP_Query.
+
+- wp_reset_postdata() : Réinitialise la publication précédente après l'utilisation de the_post.
+
+- get_the_title() : Récupère le titre de la publication actuelle dans la boucle de recherche.
+
+- the_title() : Affiche le titre de la publication actuelle dans la boucle de recherche.
+
+- the_content() : Affiche le contenu de la publication actuelle dans la boucle de recherche.
+
+- the_permalink() : Affiche l'URL de la publication actuelle dans la boucle de recherche.
+
+- the_post_thumbnail() : Affiche l'image vedette de la publication actuelle dans la boucle de recherche.
+
+- get_the_category() : Récupère les catégories de la publication actuelle dans la boucle de recherche.
+
+- the_category() : Affiche les catégories de la publication actuelle dans la boucle de recherche.
+
+- the_tags() : Affiche les tags de la publication actuelle dans la boucle de recherche.
+
+- comments_template() : Affiche le formulaire de commentaire pour la publication actuelle dans la boucle de recherche.
+
+- En utilisant ces fonctions, il est possible de personnaliser l'affichage des publications personnalisées avec une grande flexibilité pour répondre aux besoins spécifiques de votre site.
+
 ### Un exemple d'utilisation dans category.php
 
 ```

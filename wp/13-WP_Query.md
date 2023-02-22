@@ -87,3 +87,9 @@ main class="site__main">
    </section>
 </main>
 ```
+
+---
+
+### Référence
+
+- https://developer.wordpress.org/reference/classes/wp_query/

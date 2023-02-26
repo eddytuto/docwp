@@ -200,7 +200,9 @@ add_action( 'wp_enqueue_scripts', 'enqueue_noto_emoji' );
 ### comment intégrer un menu
 
 - wp_nav_menu()
-- Après avoir enregistré les emplacements de menu, vous pouvez les utiliser dans votre thème en utilisant la fonction wp_nav_menu() pour afficher le menu dans le code HTML. La fonction wp_nav_menu() prend en charge le nom de l'emplacement de menu enregistré pour l'afficher.
+- Après avoir enregistré les emplacements de menu, vous pouvez les utiliser dans votre thème en utilisant la fonction **wp_nav_menu()** pour afficher le menu dans le code HTML. La fonction **wp_nav_menu()** prend en charge le nom de l'emplacement de menu enregistré pour l'afficher.
+- https://developer.wordpress.org/themes/functionality/navigation-menus/
+- https://developer.wordpress.org/reference/functions/wp_nav_menu/
 
 ---
 

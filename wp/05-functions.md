@@ -163,8 +163,7 @@ function wpdocs_theme_name_scripts() {
         wp_enqueue_style( 'google-fonts',
 	'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap',
 	false );
-}
-add_action( 'wp_enqueue_scripts', 'google_fonts' );
+
 }
 add_action(  'wp_enqueue_scripts',
              'wpdocs_theme_name_scripts' );

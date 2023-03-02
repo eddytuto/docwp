@@ -114,7 +114,17 @@ add_shortcode( 'mon_message', 'mon_shortcode' );
 
 ---
 
-### Exemple: Entête d'une extension
+### Exemple: Extension simple
+
+> add_shortcode( 'le raccourci' , 'la fonction de rappel')
+
+- un peut comme add_action(), add_filter() ou en js comme add_event_listener()
+- add_shortcode est une fonction qui permet d'associer une fonction de rappel à un raccourci.
+- Ce raccourci est une espèce de balise qui sera intégré dans le contenu d'une page ou d'un article par l'entremise de l'éditeur de Wordpress. Le raccourci dans le contenu sera intégré en utilisant les crochets [ raccourci ]
+- https://developer.wordpress.org/reference/functions/add_shortcode/
+- Voici différents exemple d'utilisation
+- [ raccourci couleur="red"]
+- [ raccourci] Contenu [/raccourci]
 
 ```
 <?php
@@ -124,7 +134,7 @@ add_shortcode( 'mon_message', 'mon_shortcode' );
  * @version 1.0.0
 */
 /*
-Plugin Name: eddy_test_1
+Plugin Name: boite simple
 Description: Une extension simple qui ajoute une boîte dans un contenu
 Plugin URI: https://referenced.ca
 Author: Eddy Martin
@@ -132,29 +142,116 @@ Author URI: https://github.com/eddytuto
 Version: 1.0.0
 */
 /*
-La fonction add_shortcode( 'le raccourci' , 'la fonction de rappel')
-add_shortcode permet d'associer une fonction de rappel à un raccourci.
-Ce raccourci est une espèce de balise qui sera intégré dans le contenu d'une page ou d'un article par l'entremise de l'éditeur de Wordpress. Le raccourci dans le contenu sera intégré en utilisant les crochets [ raccourci ]
-https://developer.wordpress.org/reference/functions/add_shortcode/
-Voici différents exemple d'utilisation
-[ raccourci couleur="red"]
-[ raccourci] Contenu [/raccourci]
-
-/* -------------------------------------- */
- */
 
 function genere_html(){
  /////////////////////////////////////// HTML
  // Le conteneur d'une boîte
  $contenu =
- ."<div class='boite'>"
- . "<code>Auteur: " . get_the_author() . "</code>"
- . "<date>Date de publication: " . get_the_date() . "</date>"
- . "<h5>Adresse URL" . get_the_guid() . "</h5>"
- . "<h6>Catégorie: " . get_the_category() . "</h6>"
- . '</div> <!-- fin class="boite" -->';
+    $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+    <div class="carrousel">
+    <button class="bouton__x">X</button>
+    <figure class="carrousel__figure"></figure>
+    <form class="carrousel__form"></form>
+    </div>';
+    return $contenu;
 
  return $contenu;
 }
 add_shortcode('mon_html', 'genere_html');
 ```
+
+### Création de l'extension carrousel
+
+> Création de la galerie
+
+- L'extension permettra d'afficher **une à une les images agrandies d'une galerie**.
+- La galerie sera créée à partir d'**un bloc « Gallery » de l'éditeur Guthenberg de Wordpress**
+- À partir de l'éditeur à l'intérieur du bloc «**gallery**»
+- Pour sélectionner la galerie il faut **cliquer entre deux images**
+- Sélectionner « **avancée** » ensuite « **class CSS additionnelle** »
+- Entrer la class addtionnelle « **galerie** »
+
+> La structure de dossier de l'extension
+
+- L'extension est contenu dans un dossier « carrousel »
+- carrousel (le dossier principal de l'extension)
+  - js (le dossier du code javascript)
+  - sass (le dossier des fichiers scss)
+  - style.css (le fichier css compilé par Sass)
+  - carrousel.php (le fichier principal de l'extension qui doit avoir le même nom que le dossier principal )
+
+> Le fichier carrousel.php
+
+- L'entête du fichier doit contenir une **description** de l'extension
+- Cette description ressemble à la description du **fichier style.css d'un thème**
+- La description est un commentaire situé entre /\*\* ... \*/
+- Voici les principales propriétés que doit contenir la description
+  - **Plugin name: Carrousel**
+  - **Author: Eddy Martin**
+  - **Plugin URI: https://github.com/eddytuto**
+  - **Description: Permet d'afficher une à une les images d'une galerie guthenberg**
+  - **Version: 1.0.0**
+
+> carrousel.php: inclusion du fichier **style.css** et du fichier **carrousel.js**
+
+- Comme pour un thème il faut inclure les fichier .css et .js.
+- Nous utiliserons les fonctions:
+  - **filemtime()** // retourne en milliseconde le temps de la dernière sauvegarde
+  - **plugin_dir_path()** // retourne le chemin du répertoire du plugin
+  - \***\*FILE\*\*** // une constante contenant le chemin du fichier en train de s'exécuter
+  - **wp_enqueue_style()** // Intègre le link:css dans la page
+  - **wp_enqueue_script()** // intègre le script dans la page
+  - **wp_enqueue_scripts** // le hook qui permettra d'enfiler le css et le script
+
+> carrousel.php: Évaluation des numéros de version des fichier .css et .js
+
+- $version_css = filemtime(plugin_dir_path( **FILE** ) . "style.css");
+- $version_js = filemtime(plugin_dir_path(**FILE**) . "js/carrousel.js");
+
+> carrousel.php: Enfilement des **fichiers .css et .js** dans la page du site
+
+```
+    wp_enqueue_style(   'em_plugin_carrousel_css',
+                     plugin_dir_url(__FILE__) . "style.css",
+                     array(),
+                     $version_css);
+
+    wp_enqueue_script(  'em_plugin_carrousel_js',
+                    plugin_dir_url(__FILE__) ."js/carrousel.js",
+                    array(),
+                    $version_js,
+                    true);
+```
+
+> carrousel.php: **la fonction de rappel** pour executer les **fonctions d'enfilement**
+
+- **add_action('wp_enqueue_scripts', 'eddym_enqueue');**
+
+> carrousel.php: Création de la boîte qui contiendra le carrousel
+
+- **function creation_carrousel()**
+- Le code HTML à retourner
+
+```
+<button class="bouton__ouvrir">Ouvrir</button>
+    <div class="carrousel">
+    <button class="bouton__x">X</button>
+    <figure class="carrousel__figure"></figure>
+    <form class="carrousel__form"></form>
+    </div>';
+```
+
+- **add_shortcode('em_carrousel', 'creation_carrousel');**
+
+> **Création du fichier carrousel.js**
+
+- **Les étapes** pour créer un carrousel d'image
+- **L'étape 1** récupère la galerie d'images et l'image de plus haute résolution en utilisant les sélecteurs CSS querySelector et querySelectorAll.
+
+- **L'étape 2** récupère les éléments HTML nécessaires pour créer la boîte modale du carrousel, tels que l'élément figure et le bouton de fermeture.
+
+- **L'étape 3** parcourt les images de la galerie pour les ajouter au carrousel en créant dynamiquement les éléments DOM nécessaires à l'aide de createElement, en récupérant l'adresse http de l'image dans l'attribut "src" et en l'ajoutant à la figure.
+
+- Ensuite, **des radio boutons sont créés dynamiquement** pour permettre à l'utilisateur de naviguer entre les images. Les radio boutons sont également liés à l'événement mousedown pour permettre à l'utilisateur de cliquer dessus et de faire apparaître l'image correspondante dans le carrousel.
+
+- Enfin, **l'étape 4** gère l'ouverture et la fermeture de la boîte modale du carrousel en ajoutant ou en supprimant la classe **carrousel--ouvrir** à l'élément HTML correspondant **lorsqu'un bouton est cliqué**.

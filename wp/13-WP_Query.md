@@ -90,6 +90,18 @@ main class="site__main">
 
 ---
 
+### Est-ce qu'il faudrait aventagé l'utilisation de « pre_get_posts » plutôt que créé uune nouvelle instance de WP_Query() pour créer une nouvelle requête
+
+Dans la plupart des cas, il est préférable d'utiliser pre_get_posts plutôt que de créer une nouvelle instance de WP_Query() pour modifier la requête principale de WordPress.
+
+L'utilisation de pre_get_posts permet de modifier la requête principale avant que WordPress ne l'exécute. Cela signifie que WordPress chargera uniquement les éléments qui correspondent aux critères de la requête modifiée, plutôt que de charger tous les éléments et de les filtrer par la suite. Cela peut rendre votre site plus rapide et améliorer ses performances.
+
+D'autre part, l'utilisation d'une nouvelle instance de WP_Query() crée une deuxième requête qui charge tous les éléments avant de les filtrer. Cela peut ralentir votre site et rendre le chargement de la page plus long.
+
+Cependant, il peut y avoir des situations où vous avez besoin de créer une nouvelle instance de WP_Query(), par exemple si vous voulez afficher des éléments spécifiques qui ne sont pas inclus dans la requête principale, ou si vous voulez paginer les résultats d'une manière différente de celle par défaut. Dans ce cas, vous pouvez créer une nouvelle instance de WP_Query() en utilisant les paramètres appropriés.
+
+En résumé, l'utilisation de pre_get_posts est généralement préférable pour modifier la requête principale de WordPress, car cela peut améliorer les performances de votre site. Cependant, il peut y avoir des situations où vous devez créer une nouvelle instance de WP_Query() pour des besoins spécifiques.
+
 ### Référence
 
 - https://developer.wordpress.org/reference/classes/wp_query/

@@ -1,6 +1,6 @@
 ### Modification de la requête principale de WP
 
-> L'affichage d'une page d'un site Wordpress ce fait à partir d'une requête https qui permettra d'extraire un contenu ciblé de la base de données et d'exécuter un modèle spécifique régis par le diagramme d'exécution d'un template: **https://developer.wordpress.org/themes/basics/template-hierarchy/**. La requête principale de WP est créée par la requête https. La requête principal est une requête mySQL segmenté à l'intérieur dans l'objet WP_query. Une fois créée cette requête principale peut être adapté pour modifier l'extration des données
+> L'affichage d'une page d'un site Wordpress ce fait à partir d'une requête https qui permettra d'extraire un contenu ciblé de la base de données et d'exécuter un modèle spécifique régis par le diagramme d'exécution d'un template: **https://developer.wordpress.org/themes/basics/template-hierarchy/**. La requête principale de WP est créée par la requête https. La requête principal est une requête mySQL segmenté à l'intérieur de l'objet WP_query. Une fois créée cette requête principale peut être adapté pour modifier l'extration des données
 
 ### A quoi sert le hook « pre_get_posts »
 

@@ -9,7 +9,7 @@ function custom_menu_item_title($title, $item, $args, $depth) {
 // Modifier la longueur du titre en fonction de vos besoins
 $title = wp_trim_words($title, 3, ' ... ');
 }
-return $title;
+return $title;b
 }
 add_filter('nav_menu_item_title', 'custom_menu_item_title', 10, 4);
 ```

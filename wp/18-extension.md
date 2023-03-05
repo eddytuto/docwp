@@ -1,3 +1,5 @@
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=0000000&machine=premiumLinux&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestUs2)
+
 ## Les extensions Wordpress
 
 > Une extension WordPress, également connue sous le nom de **plugin** WordPress, est un logiciel tiers qui peut être ajouté à un site Web WordPress existant pour ajouter des **fonctionnalités supplémentaires** ou **modifier son comportement**. Les extensions peuvent être utilisées pour ajouter des fonctionnalités telles que des **formulaires de contact**, des **galeries** d'images, des fonctionnalités de **commerce électronique**, des **fonctionnalités de réseaux sociaux** et bien plus encore.

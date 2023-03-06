@@ -26,3 +26,14 @@
 - git branch lab2
 - git checkout lab2
 - git push 4w4 lab2 (pousse la branche active lab2 vers 4w4 dans la branche lab2)
+
+### comment modifier le message d'un dernier commit
+
+La commande pour modifier le message du dernier commit sur Git est:
+
+> git commit --amend -m "Nouveau message de commit"
+
+- Cette commande permet de modifier le dernier message de commit que vous avez effectué. Elle utilise l'option --amend pour modifier le commit existant plutôt que d'en créer un nouveau. Vous pouvez remplacer "Nouveau message de commit" par le nouveau message que vous souhaitez utiliser. Après avoir exécuté cette commande, Git ouvrira votre éditeur de texte par défaut pour vous permettre de modifier le message de commit. Modifiez le message, enregistrez et fermez l'éditeur de texte pour finaliser la modification.
+- Notez que si vous avez déjà poussé le commit sur un dépôt distant, vous devrez forcer la poussée du commit modifié en utilisant la commande
+
+> git push --force.

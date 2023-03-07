@@ -2,7 +2,7 @@
 
 > Voici une liste de quelques hooks utiles qui peuvent être utilisés pour modifier la structure de menu dans WordPress :
 
--**wp_nav_menu** - Ce hook est appelé lorsque le menu est généré, avant que le HTML ne soit renvoyé. Vous pouvez l'utiliser pour modifier la sortie HTML du menu.
+- **wp_nav_menu** - Ce hook est appelé lorsque le menu est généré, avant que le HTML ne soit renvoyé. Vous pouvez l'utiliser pour modifier la sortie HTML du menu.
 
 - **wp_nav_menu_items** - Ce hook est appelé lorsque les éléments de menu sont générés, avant que le HTML ne soit renvoyé. Vous pouvez l'utiliser pour modifier les éléments de menu, comme leur nom, leur URL, leur classe CSS, etc.
 

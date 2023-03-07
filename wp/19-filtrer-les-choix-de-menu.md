@@ -1,4 +1,4 @@
-## alterner la structure de menu de Wordpress
+## Alterner la structure de menu de Wordpress
 
 > Voici une liste de quelques hooks utiles qui peuvent être utilisés pour modifier la structure de menu dans WordPress :
 

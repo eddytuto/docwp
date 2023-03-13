@@ -200,15 +200,15 @@ add_shortcode('mon_html', 'genere_html');
 - Nous utiliserons les fonctions:
   - **filemtime()** // retourne en milliseconde le temps de la dernière sauvegarde
   - **plugin_dir_path()** // retourne le chemin du répertoire du plugin
-  - \***\*FILE\*\*** // une constante contenant le chemin du fichier en train de s'exécuter
+  - **\_\_FILE\_\_** // une constante contenant le chemin du fichier en train de s'exécuter
   - **wp_enqueue_style()** // Intègre le link:css dans la page
   - **wp_enqueue_script()** // intègre le script dans la page
   - **wp_enqueue_scripts** // le hook qui permettra d'enfiler le css et le script
 
 > carrousel.php: Évaluation des numéros de version des fichier .css et .js
 
-- $version_css = filemtime(plugin_dir_path( **FILE** ) . "style.css");
-- $version_js = filemtime(plugin_dir_path(**FILE**) . "js/carrousel.js");
+- $version_css = filemtime(plugin_dir_path( **\_\_FILE\_\_** ) . "style.css");
+- $version_js = filemtime(plugin_dir_path(**\_\_FILE\_\_**) . "js/carrousel.js");
 
 > carrousel.php: Enfilement des **fichiers .css et .js** dans la page du site
 
@@ -257,3 +257,11 @@ add_shortcode('mon_html', 'genere_html');
 - Ensuite, **des radio boutons sont créés dynamiquement** pour permettre à l'utilisateur de naviguer entre les images. Les radio boutons sont également liés à l'événement mousedown pour permettre à l'utilisateur de cliquer dessus et de faire apparaître l'image correspondante dans le carrousel.
 
 - Enfin, **l'étape 4** gère l'ouverture et la fermeture de la boîte modale du carrousel en ajoutant ou en supprimant la classe **carrousel--ouvrir** à l'élément HTML correspondant **lorsqu'un bouton est cliqué**.
+
+### Les étapes de développement du carrousel
+
+- Ouvrir la boîte modale « carrousel » avec un bouton temporaire
+- Fermer la boîte modale avec le « bouton\_\_x » du carrousel
+- l'ouverture de la boîte modale se fait en ajoutant la classe « carrousel--ouvrir »
+- La fermeture de la boîte modale se fait en retirant la classe « carrousel--ouvrir »
+- La boîte modale est animé avec la transformation « scale » on applique une transition à la propriété « transform »

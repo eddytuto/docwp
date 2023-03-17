@@ -9,6 +9,15 @@ Le premier argument de la fonction add_theme_support() est le type de fonctionna
 - **default-color** : la couleur d'arrière-plan par défaut en l'absence d'image personnalisée. La valeur par défaut est #ffffff (blanc).
 - **default-image** : l'image d'arrière-plan par défaut en l'absence de personnalisation. Aucune image n'est définie par défaut.
 - **default-repeat** : la façon dont l'image d'arrière-plan par défaut est répétée. Les valeurs possibles sont repeat (répéter horizontalement et verticalement), repeat-x (répéter horizontalement) ou repeat-y (répéter verticalement). La valeur par défaut est repeat.
-- **default-position-x **: la position horizontale de l'image d'arrière-plan par défaut. Les valeurs possibles sont left, center ou right. La valeur par défaut est left.
+- **default-position-x**: la position horizontale de l'image d'arrière-plan par défaut. Les valeurs possibles sont left, center ou right. La valeur par défaut est left.
 - **default-position-y** : la position verticale de l'image d'arrière-plan par défaut. Les valeurs possibles sont top, center ou bottom. La valeur par défaut est top.
 - **default-size** : la taille de l'image d'arrière-plan par défaut. Les valeurs possibles sont auto (taille originale), contain (ajuster la taille pour que l'image tienne entièrement dans l'élément parent) ou cover (ajuster la taille pour que l'image remplisse l'élément parent sans se déformer). La valeur par défaut est auto.
+
+## Exemple d'utilisation dans function.php
+- ```$args = array(
+    'default-color' => '0000ff',
+    'default-image' => get_template_directory_uri() . '/images/wapuu.jpg',
+);
+add_theme_support( 'custom-background', $args );```
+
+

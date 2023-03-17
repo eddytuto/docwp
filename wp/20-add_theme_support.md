@@ -17,7 +17,8 @@ Le premier argument de la fonction add_theme_support() est le type de fonctionna
 - ```$args = array(
     'default-color' => '0000ff',
     'default-image' => get_template_directory_uri() . '/images/wapuu.jpg',
-);
-add_theme_support( 'custom-background', $args );```
+    );
+    add_theme_support( 'custom-background', $args );
+-  
 
 

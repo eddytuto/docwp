@@ -20,6 +20,6 @@ Le premier argument de la fonction add_theme_support() est le type de fonctionna
     );
     add_theme_support( 'custom-background', $args );
 -  ajouter la classe « **custom-background** » dans la balise body
--  ```<body class="custom-background site">
+-  ```<body class="custom-background site">```
 
 

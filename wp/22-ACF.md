@@ -54,7 +54,7 @@ Voici une liste de types d'informations que vous pouvez stocker dans des champs 
 
 ### Exemple d'utilisation
 
-- `<h2><?php the_field('heading'); ?></h2>`
+- `<h2><?php the_field('enseignant'); ?></h2>`
 
 ### Ressources utiles pour ACF
 

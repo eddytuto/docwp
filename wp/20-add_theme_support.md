@@ -31,4 +31,3 @@ add_theme_support( 'custom-background', $defaults );
 
 - `https://developer.wordpress.org/reference%2Ffunctions%2Fadd_theme_support%2F/`
 - `https://developer.wordpress.org/themes/functionality/custom-backgrounds/`
--

@@ -9,8 +9,9 @@
 - WordPress stocke ensuite cette information dans la table "**postmeta**" en utilisant la **clé** (nom) que vous avez spécifiée et la **valeur** que vous avez attribuée.
 - Cette **structure de données** permet aux développeurs de stocker des informations supplémentaires pour chaque publication et page WordPress, offrant ainsi une grande flexibilité en matière de personnalisation de contenu pour les sites WordPress.
 
+
 ### La base de données de wordpress
-https://codex.wordpress.org/images/2/25/WP4.4.2-ERD.png
+	![Base de donn.es]https://codex.wordpress.org/images/2/25/WP4.4.2-ERD.png
 
 ### Les types de données
 

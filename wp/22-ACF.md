@@ -11,7 +11,7 @@
 
 
 ### La base de données de wordpress
-	![Base de donn.es]https://codex.wordpress.org/images/2/25/WP4.4.2-ERD.png
+https://codex.wordpress.org/images/2/25/WP4.4.2-ERD.png
 
 ### Les types de données
 

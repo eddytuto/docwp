@@ -27,7 +27,7 @@
 - git checkout lab2
 - git push 4w4 lab2 (pousse la branche active lab2 vers 4w4 dans la branche lab2)
 
-### comment modifier le message d'un dernier commit
+### Comment modifier le message d'un dernier commit
 
 La commande pour modifier le message du dernier commit sur Git est:
 
@@ -37,3 +37,5 @@ La commande pour modifier le message du dernier commit sur Git est:
 - Notez que si vous avez déjà poussé le commit sur un dépôt distant, vous devrez forcer la poussée du commit modifié en utilisant la commande
 
 > git push --force.
+### Références
+> https://devconnected.com/how-to-undo-last-git-commit/

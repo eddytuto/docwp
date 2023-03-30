@@ -11,7 +11,7 @@
   - `the_post_thumbnail();`
 
 ### Les post thumbnail
-- Se sont les images-mise-en-avant qui peuvent être dimensionnée en plusieurs grandeur.
+- Ce sont les images-mise-en-avant qui peuvent être dimensionnée en plusieurs grandeur.
 - Pour pouvoir intégré une image mise en avant, il faut ajouter une option dans functions.php
   - `add_theme_support( 'post-thumbnails' );`
   - Cet ajout rendra disponible **Image mis en avant** sur l'interface de droite de l'éditeur de wp 

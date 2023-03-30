@@ -1,9 +1,9 @@
-## Les images à la une
+## Les images à la une (post thumbnail)
 > Wordpress permet d'intégrer les images de différentes façons:
-- Sous forme de css background-image:
-  - Dans function.php **add_theme_support('custom-background');**
+- A partir du **customizer**:
+  - Sous forme css à partir de la propriété background-image. On ajoute l'option dans function.php **add_theme_support('custom-background');**
   - `<body class="custom-background site">`
-  - Dans functions.php **add_theme_support('custom-logo')**
+  - Sous d'une balise <img>. On ajoute l'option dans functions.php **add_theme_support('custom-logo')**
 - Sous forme d'images intégrés directement dans les blocs Gutenberg de Wordpress
   - **Image individuelle**
   - **Galerie d'images**
@@ -11,6 +11,7 @@
   - `the_post_thumbnail();`
 
 ### Les post thumbnail
+- Se sont les images-mise-en-avant qui peuvent être dimensionnée en plusieurs grandeur.
 - Pour pouvoir intégré une image mise en avant, il faut ajouter une option dans functions.php
   - `add_theme_support( 'post-thumbnails' );`
   - Cet ajout rendra disponible **Image mis en avant** sur l'interface de droite de l'éditeur de wp 

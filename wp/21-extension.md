@@ -36,6 +36,7 @@
   - https://wordpress.org/plugins/search/security/
 - **Sauvegarde de sécurité et redéploiement**
   - https://wordpress.org/plugins/search/backup/
+  - https://www.akeeba.com/products/akeeba-backup-wordpress.html
 - **Gestion des champs personnalisés**
   - https://wordpress.org/plugins/search/custom+field/
   - La bonne version de ACF

@@ -149,7 +149,7 @@ Version: 1.0.0
 function genere_html(){
  /////////////////////////////////////// HTML
  // Le conteneur d'une boîte
- $contenu =
+ 
     $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
     <div class="carrousel">
     <button class="carrousel__x">X</button>

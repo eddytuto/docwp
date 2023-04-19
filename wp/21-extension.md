@@ -263,6 +263,6 @@ add_shortcode('mon_html', 'genere_html');
 
 - Ouvrir la boîte modale « carrousel » avec un bouton temporaire
 - Fermer la boîte modale avec le « bouton\_\_x » du carrousel
-- l'ouverture de la boîte modale se fait en ajoutant la classe « carrousel--ouvrir »
-- La fermeture de la boîte modale se fait en retirant la classe « carrousel--ouvrir »
+- l'ouverture de la boîte modale se fait en ajoutant la classe « carrousel--activer »
+- La fermeture de la boîte modale se fait en retirant la classe « carrousel--activer »
 - La boîte modale est animé avec la transformation « scale » on applique une transition à la propriété « transform »

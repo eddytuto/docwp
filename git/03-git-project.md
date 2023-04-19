@@ -64,6 +64,10 @@ Project fourni une grille adaptable permettant de visualiser plusieurs paramètr
 - Ajout d'issue par bolk
 - Si on change le statut d'un issue on créé un événement « time line »
 
+### Pour lier un issue à un pull request
+- docs.github.com - Linking a pull request to an issue
+
+
 ### command palette
 
 - ctrl+k

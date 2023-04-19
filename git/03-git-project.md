@@ -64,6 +64,11 @@ Project fourni une grille adaptable permettant de visualiser plusieurs paramètr
 - Ajout d'issue par bolk
 - Si on change le statut d'un issue on créé un événement « time line »
 
+### command palette
+
+- ctrl+k
+-
+
 ### Références
 
 - En français https://docs.github.com/fr

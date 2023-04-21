@@ -10,7 +10,7 @@
 Project fourni une grille adaptable permettant de visualiser plusieurs paramètres
 
 - Les **issues** (les tâches)
-- Les **Pull request** (les demandes de tirage)
+- Les **Pull request** 
 
 ### Fournies des fonctionnalités
 

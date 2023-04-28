@@ -1,6 +1,6 @@
 ## Les images à la une (post thumbnail)
 > Wordpress permet d'intégrer les images de différentes façons:
-- A partir du **customizer**:
+- A partir du **customizer**  (en français **personnaliser** :
   - Sous forme css à partir de la propriété background-image. On ajoute l'option dans function.php **add_theme_support('custom-background');**
   - `<body class="custom-background site">`
   - Sous d'une balise <img>. On ajoute l'option dans functions.php **add_theme_support('custom-logo')**

@@ -17,6 +17,7 @@
 - **wp_setup_nav_menu_item** - Ce hook est appelé lorsqu'un objet de menu est créé pour un élément de menu. Vous pouvez l'utiliser pour modifier les propriétés de l'objet de menu.
 
 - **wp_edit_nav_menu_walker** - Ce hook est appelé lorsqu'un éditeur de menu est utilisé pour éditer un menu. Vous pouvez l'utiliser pour personnaliser l'apparence et le comportement de l'éditeur de menu.
+- **walker_nav_menu_start_el** - Ce hook est utilisé pour ajouter l'option "description" à un menu WordPress car il est appelé pour chaque élément de menu affiché dans la liste de menus générée par la fonction wp_nav_menu(). Ce hook est appelé avant que chaque élément de menu ne soit généré, ce qui permet aux développeurs de personnaliser l'affichage de chaque élément de menu en fonction de leurs besoins.
 
 > Ces hooks peuvent être utilisés pour personnaliser et altérer la structure des menus WordPress en fonction de vos besoins spécifiques.
 

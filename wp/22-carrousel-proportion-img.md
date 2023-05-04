@@ -6,7 +6,7 @@
 
 ### La grandeur de la boîte modale s'adaptera à l'image
 
-- L'objectif sera de maintenir le rapport hauteur/largeur de l'image tout en adaptant la taille de la boîte modale pour qu'elle s'adapte à la taille de l'image sans la **couper** et/ou la **déformer**.
+- L'**objectif** sera de **maintenir le rapport hauteur/largeur de l'image** tout en adaptant la **taille de la boîte modale** pour qu'elle s'adapte à la taille de l'image sans la **couper** et/ou la **déformer**.
 - L'adaptation sera générée **dynamiquement** avec **Javascript**
 
 ### La stratégie à utiliser pour optimiser l'affichages des images du carrousel

@@ -4,12 +4,12 @@
 2. La galerie affichera une version réduite des images du carrousel « thumbnail ou medium »
 3. Le carrousel contiendra les images initiales téléversée
 
-## La grandeur de la boîte modale s'adaptera à l'image
+### La grandeur de la boîte modale s'adaptera à l'image
 
 - L'objectif sera de maintenir le rapport hauteur/largeur de l'image tout en adaptant la taille de la boîte modale pour qu'elle s'adapte à la taille de l'image sans la couper.
 - L'adaptation sera générée dynamiquement avec Javascript
 
-## La stratégie à utiliser pour optimiser l'affichages des images du carrousel
+### La stratégie à utiliser pour optimiser l'affichages des images du carrousel
 
 > La stratégie pour résoudre le problème d'ajustement de la boîte modale à l'image qu'elle contient et à la dimension de la fenêtre du navigateur implique plusieurs paramètres.
 > Tout d'abord, il est important de récupérer la **largeur** et la **hauteur** de l'**image** ainsi que la **largeur** et la **hauteur** de la **fenêtre du navigateur**, car elles détermineront la taille de la boîte modale.
@@ -18,7 +18,7 @@
 
 > Une fois que toutes ces dimensions sont récupérées, il faut calculer la **largeur** et la **hauteur** de la **boîte modale** en fonction de la largeur et la hauteur de l'image et la largeur et la hauteur de la fenêtre du navigateur. On peut utiliser différentes formules pour ce calcul en fonction des contraintes spécifiques du projet. Enfin, la position de la boîte modale doit être définie pour qu'elle soit **centrée au milieu** de la fenêtre du navigateur.
 
-## Les fonctions qui seront utilisées pour ce traitement
+### Les fonctions qui seront utilisées pour ce traitement
 
 Voici une liste de fonctions qui peuvent être utiles pour adapter une boîte modale au contenu qu'elle contient :
 
@@ -38,7 +38,7 @@ Voici une liste de fonctions qui peuvent être utiles pour adapter une boîte mo
 
 8. `Element.getBoundingClientRect()`: cette méthode retourne un objet avec les coordonnées et les dimensions de l'élément, par rapport à la fenêtre du navigateur.
 
-## Les étapes à suivre
+### Les étapes à suivre
 
 1. Récupérer la largeur et la hauteur de l'image à afficher dans la boîte modale, ainsi que la largeur du carrousel et la hauteur de la boîte modale elle-même.
 2. Récupérer également la largeur et la hauteur de la fenêtre du navigateur.

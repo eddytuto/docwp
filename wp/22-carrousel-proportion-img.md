@@ -2,7 +2,8 @@
 
 1. Utiliser de grandes images au dessus de 1000px x 1000px
 2. La galerie affichera une version réduite des images du carrousel « thumbnail ou medium »
-3. Le carrousel contiendra les images initiales téléversée
+3. Le carrousel contiendra les images sources téléversée et non l'image transformée par wordpress. Ex: l'image thumbnail est: mon_image-150x150.jpg, l'image source est mon_image.jpg.
+4. Pour intégrer les images sources dans le carrousel on retirera la sous chaîne «-150x150 » du nom de fichier.
 
 ### La grandeur de la boîte modale s'adaptera à l'image
 

@@ -6,15 +6,15 @@
 
 ### La grandeur de la boîte modale s'adaptera à l'image
 
-- L'objectif sera de maintenir le rapport hauteur/largeur de l'image tout en adaptant la taille de la boîte modale pour qu'elle s'adapte à la taille de l'image sans la couper.
-- L'adaptation sera générée dynamiquement avec Javascript
+- L'objectif sera de maintenir le rapport hauteur/largeur de l'image tout en adaptant la taille de la boîte modale pour qu'elle s'adapte à la taille de l'image sans la **couper** et/ou la **déformer**.
+- L'adaptation sera générée **dynamiquement** avec **Javascript**
 
 ### La stratégie à utiliser pour optimiser l'affichages des images du carrousel
 
 > La stratégie pour résoudre le problème d'ajustement de la boîte modale à l'image qu'elle contient et à la dimension de la fenêtre du navigateur implique plusieurs paramètres.
 > Tout d'abord, il est important de récupérer la **largeur** et la **hauteur** de l'**image** ainsi que la **largeur** et la **hauteur** de la **fenêtre du navigateur**, car elles détermineront la taille de la boîte modale.
 
-> Il est important de noter que la taille de la fenêtre du navigateur peut varier d'un utilisateur à l'autre et en fonction de l'appareil utilisé (ordinateur de bureau, tablette, téléphone mobile, etc.). Par conséquent, il est important que l'affichage soit aussi précis sur tous les appareils.
+> Il est important de noter que la **taille de la fenêtre du navigateur peut varier** d'un utilisateur à l'autre et en fonction de l'appareil utilisé (ordinateur de bureau, tablette, téléphone mobile, etc.). Par conséquent, il est important que l'affichage soit aussi précis sur tous les appareils.
 
 > Une fois que toutes ces dimensions sont récupérées, il faut calculer la **largeur** et la **hauteur** de la **boîte modale** en fonction de la largeur et la hauteur de l'image et la largeur et la hauteur de la fenêtre du navigateur. On peut utiliser différentes formules pour ce calcul en fonction des contraintes spécifiques du projet. Enfin, la position de la boîte modale doit être définie pour qu'elle soit **centrée au milieu** de la fenêtre du navigateur.
 

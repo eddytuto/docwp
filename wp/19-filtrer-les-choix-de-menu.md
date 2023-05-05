@@ -105,7 +105,7 @@ add_filter( 'walker_nav_menu_start_el', 'add_menu_featured_image', 10, 4 );
 
 ```
 function add_menu_description_and_thumbnail( $item_output, $item, $depth, $args ) {
-    if ( 'evenement' == $item->menu_item_parent && 'post_type' == $item->object ) {
+    if ( 'evenement' == $args->menu) {
         $post_thumbnail_id = get_post_thumbnail_id( $item->object_id );
         if ( $post_thumbnail_id ) {
             $post_thumbnail_url = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail' );

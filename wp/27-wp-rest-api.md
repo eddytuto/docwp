@@ -29,14 +29,14 @@ En résumé, la REST API de WordPress offre un moyen flexible et puissant d'acc�
 - Assurez-vous que l'API REST est activée : Par défaut, l'API REST de WordPress est activée. Vous pouvez vérifier cela en vous connectant à l'interface d'administration de WordPress « wp-admin », en allant dans "Réglages" > "Lecture" et en vous assurant que l'option "Autoriser les moteurs de recherche à indexer ce site" est cochée. Cela active l'API REST pour la plupart des fonctionnalités par défaut.
 
 - Tester une première requête REST sur votre navigateur:
-  - `https://gftnth00.mywhc.ca/eddy/wp-json/wp/v2/posts?categories=5`
+  - `https://gftnth00.mywhc.ca/eddy/wp-json/wp/v2/posts?categories=3`
   - `https://gftnth00.mywhc.ca/eddy` Est un site wordpress test contenant la description des cours du TIM
   - `wp-json/wp/v2/posts` : C'est le point de terminaison pour les articles. Il indique à l'API de WordPress que vous souhaitez obtenir une liste des articles. Vous pouvez également remplacer posts par d'autres types de données comme pages pour obtenir la liste des pages.
-  - `?categories=5` : Permet d'extraire les articles de catégorie « cours » « 5 » étant le ID de la catégorie « cours »
+  - `?categories=3` : Permet d'extraire les articles de catégorie « cours » « 5 » étant le ID de la catégorie « cours »
 
 ### Résultats renvoyés
 
-voici une description des grandes lignes de la structure JSON renvoyée par la requête à l'URL https://gftnth00.mywhc.ca/eddy/wp-json/wp/v2/posts?categories=5 :
+voici une description des grandes lignes de la structure JSON renvoyée par la requête à l'URL https://gftnth00.mywhc.ca/eddy/wp-json/wp/v2/posts?categories=3 :
 La structure JSON renvoyée est une collection d'objets, chaque objet représentant un article de votre site WordPress qui appartient à la catégorie avec l'ID 5. Voici les principales parties de cette structure JSON :
 
 - id : C'est l'identifiant unique de l'article.

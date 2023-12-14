@@ -110,9 +110,9 @@ Permet d'identifier une nouvelle version du projet
 
 ## Pour créer une Github page
 
-1. Une fois que le dépôt local a été poussée vers le serveur Github, on peut créer une `Github-page`
+1. Une fois que le dépôt local a été poussé vers le serveur Github, on peut créer une `Github-page`
 2. Accédez à votre compte Github
-3. Sélectionnez le dépôt sur lequel vous voulez créé une github-page
+3. Sélectionnez le dépôt sur lequel vous voulez créer une github-page
    > « `repository` » sélectionnez votre dépôt
 4. Sélectionnez
    > « `Setting` »

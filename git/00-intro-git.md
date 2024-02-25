@@ -12,7 +12,8 @@
 
 **_GitHub-pages_** Github permet de publier un site Web constitué d'une seule page. Il suffit que le **_dépôt_** contenant le site soit **_publique_**. Une fois que le dépôt est créé on peut créer la Github-page en accédant au « `setting` » du dépôt et à « `Page`».
 
-**_l'adresse de la github-page final_** [Github page TP2](https://eddytuto.github.io/1w1/#accueil "Github page TP2")
+**_l'adresse de la github-page final_** https://eddytuto.github.io/1w1-gr4/
+
 
 ## Création d'une Github-page :
 
@@ -109,9 +110,9 @@ Permet d'identifier une nouvelle version du projet
 
 ## Pour créer une Github page
 
-1. Une fois que le dépôt local a été poussée vers le serveur Github, on peut créer une `Github-page`
+1. Une fois que le dépôt local a été poussé vers le serveur Github, on peut créer une `Github-page`
 2. Accédez à votre compte Github
-3. Sélectionnez le dépôt sur lequel vous voulez créé une github-page
+3. Sélectionnez le dépôt sur lequel vous voulez créer une github-page
    > « `repository` » sélectionnez votre dépôt
 4. Sélectionnez
    > « `Setting` »

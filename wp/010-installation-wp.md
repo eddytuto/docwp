@@ -1,6 +1,7 @@
 ### Les étapes pour installer Wordpress localement sur votre ordinateur
 
 - Téléchargez et installez XAMPP sur votre ordinateur à partir du site web officiel (https://www.apachefriends.org/download.html).
+- Pour la version portable de XAMPP utiliser ce lien : https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/
 
 - Ouvrez le panneau de contrôle XAMPP et démarrez les modules Apache et MySQL.
 

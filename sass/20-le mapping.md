@@ -122,7 +122,7 @@ $defaut: (
 );
 ```
 
-### Création de classe de couleur dynamique
+### Création de classes de couleurs de façon dynamique
 
 ```
 @each $nom, $couleurs in $defaut {
@@ -155,7 +155,7 @@ Les propriétés CSS color et background-color sont alors définies avec la vale
 Cette boucle imbriquée génère des classes CSS pour chaque combinaison de catégorie de couleur et de niveau de couleur, ce qui permet d'appliquer facilement des couleurs à différents éléments de votre interface.
 
 
-### Technique pour créer des agencement de couleur
+### Technique pour créer des agencements de couleurs
 
 ```
 $agencement-couleur :(
@@ -167,6 +167,13 @@ $agencement-couleur :(
 ```
 
 ### Mixin
+
+
+Un mixin en Sass est un bloc réutilisable de code qui peut contenir des déclarations de style, des directives de contrôle de flux et même d'autres mixins. Les mixins sont définis à l'aide de la directive @mixin suivie du nom du mixin et de ses paramètres, le cas échéant. Voici comment définir un mixin en Sass :
+
+
+
+### @mixin couleur-agencement($clr,$bck)
 
 Ce mixin prend deux arguments :
 

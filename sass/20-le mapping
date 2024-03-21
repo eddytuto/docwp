@@ -188,6 +188,9 @@ Voici comment vous pourriez utiliser ce mixin dans votre feuille de style :
     }   
 }
 ```
+### @use 'sass:list'
+Ajouter @use 'sass:list' sur la première ligne de votre fichier
+
 
 ### boucle utilisant le mixin
 

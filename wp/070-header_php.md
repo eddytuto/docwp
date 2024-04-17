@@ -20,3 +20,29 @@
 - Cette fonction permet de récupérer l'information définie dans le tableau de bord: Réglage/général
 - https://developer.wordpress.org/reference/functions/bloginfo/
 - Cette fonction permettra d'intégrer dynamiquement le titre du site, la description générale et l'URL d'accès
+
+
+### La fonction wp_head() 
+- Est une fonction clé dans WordPress utilisée pour ajouter des scripts, des balises <meta>, des styles CSS et d'autres éléments dans la section <head> de votre thème WordPress. Cette fonction est généralement appelée dans le fichier header.php de votre thème WordPress et est essentielle pour le bon fonctionnement de nombreux plugins et fonctionnalités.
+
+### Voici ce que fait concrètement la fonction wp_head() :
+
+- Inclusion des balises <meta> : La fonction wp_head() inclut automatiquement certaines balises <meta> nécessaires pour optimiser le référencement (SEO) de votre site, telles que les balises de description, l'encodage des caractères, etc.
+
+- Inclusion des styles CSS : Les feuilles de style (CSS) nécessaires pour le bon fonctionnement de votre thème et de vos plugins sont ajoutées grâce à wp_head(). Ces styles peuvent inclure des styles par défaut de WordPress ainsi que des styles spécifiques à votre thème ou à vos plugins.
+
+- Inclusion des scripts JavaScript : Certains scripts JavaScript sont également ajoutés à l'aide de wp_head(). Cela peut inclure des scripts pour le chargement asynchrone, le suivi des analyses, les fonctionnalités spécifiques du thème ou des plugins, etc.
+
+- Prise en charge des fonctionnalités de plugins : De nombreux plugins WordPress utilisent wp_head() pour ajouter des fonctionnalités spécifiques à la section <head> du site. Par exemple, des plugins de gestion des balises, des plugins de réseaux sociaux, des plugins de suivi d'activité, etc., peuvent ajouter des balises et des scripts via cette fonction.
+
+- Personnalisation avancée : Les développeurs de thèmes et de plugins peuvent également utiliser wp_head() pour ajouter des éléments personnalisés à la section <head> en utilisant des hooks WordPress comme wp_head.
+
+### comment retirer les variables css de couleur « `wp--preset--` »
+
+- https://webgaku.net/wordpress/global-styles-inline-css/#:~:text=Add%20the%20following%20code%20to%20functions.php%20of%20the,are%20using.%20add_action%28%27wp_enqueue_scripts%27%2C%20%27remove_global_styles%27%29%3B%20function%20remove_global_styles%28%29%7B%20wp_dequeue_style%28%27global-styles%27%29%3B%20%7D
+
+- Dans le fichier functions.php ajoutez le code suivant pour retirer le `css global`utiliser par les « `block theme` »
+- add_action( 'wp_enqueue_scripts', 'remove_global_styles' );
+function remove_global_styles(){
+    wp_dequeue_style( 'global-styles' );
+}

@@ -229,6 +229,7 @@ add_shortcode('mon_html', 'genere_html');
 > carrousel.php: **la fonction de rappel** pour executer les **fonctions d'enfilement**
 
 - **add_action('wp_enqueue_scripts', 'eddym_enqueue');**
+- ** Attention ** Assurez-vous que votre thème utilise les fontions `wp_header()` dans le template **header.php** et `wp_footer` dans **footer.php**.
 
 > carrousel.php: Création de la boîte qui contiendra le carrousel
 
@@ -249,7 +250,7 @@ add_shortcode('mon_html', 'genere_html');
 > **Création du fichier carrousel.js**
 
 - **Les étapes** pour créer un carrousel d'image
-- **L'étape 1** récupère la galerie d'images et l'image de plus haute résolution en utilisant les sélecteurs CSS querySelector et querySelectorAll.
+- **L'étape 1** récupère la galerie d'images et l'image de plus haute résolution en utilisant les sélecteurs CSS querySelector et querySelectorAll. Vérifier que votre thème utilise les fontions `wp_header()` dans le template header.php et `wp_footer` dans footer.php.
 
 - **L'étape 2** récupère les éléments HTML nécessaires pour créer la boîte modale du carrousel, tels que l'élément figure et le bouton de fermeture.
 

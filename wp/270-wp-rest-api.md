@@ -74,7 +74,7 @@ Développons un plugin dans le dossier **« voyage »** qui contiendra:
 
 ```<?php
 /**
- * Package Cours
+ * Package Voyage
  * Version 1.0.0
  */
 /*

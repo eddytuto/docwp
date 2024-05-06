@@ -109,7 +109,7 @@ add_action('wp_enqueue_scripts', 'eddym_enqueue');
 /* Création de la liste des destinations en HTML */
 function creation_destinations(){
     $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
-    <div class="destination">
+    <div class="contenu__restapi">
     </div>';
     return $contenu;
 }

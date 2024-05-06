@@ -1,10 +1,10 @@
 ## REST API de WORDPRESS
 
-Est une interface de programmation qui permet d'interagir la **base de données** de WordPress en utilisant des requêtes ***HTTP***. 
+Est une interface de programmation qui permet d'interagir avec la **base de données** de WordPress en utilisant des requêtes **_HTTP_**.
 
 ### Les caractéristiques
 
-- Voici certaines des caractéristiques clés de la REST API de WordPress :
+- Voici certaines des **caractéristiques clés** de la **REST API de WordPress** :
 
 - **Accès aux données** : La WP REST API vous permet d'accéder à divers types de données sur votre site WordPress, notamment les articles, les pages, les commentaires, les utilisateurs, les médias, les catégories, les balises, les types de contenu personnalisés, etc.
 
@@ -32,9 +32,9 @@ En résumé, la REST API de WordPress offre un moyen flexible et puissant d'acc�
 
 - Tester une première requête REST sur votre navigateur:
   - `https://gftnth00.mywhc.ca/tim50/wp-json/wp/v2/posts?categories=3`
-  - `https://gftnth00.mywhc.ca/tim50` Est un site wordpress  contenant  des destinations de voyages
+  - `https://gftnth00.mywhc.ca/tim50` Est un site wordpress contenant des destinations de voyages
   - `wp-json/wp/v2/posts` : C'est le point de terminaison pour les articles. Il indique à l'API de WordPress que vous souhaitez obtenir une liste des articles. Vous pouvez également remplacer posts par d'autres types de données comme pages pour obtenir la liste des pages.
-  - `?categories=3` : Permet d'extraire les articles de catégorie « cours » « 5 » étant le ID de la catégorie « cours »
+  - `?categories=3` : Permet d'extraire les articles de catégorie « 3 »
 
 ### Résultats renvoyés
 
@@ -42,25 +42,25 @@ Voici une description des grandes lignes de la structure JSON renvoyée par la r
 La **structure JSON** renvoyée est une **collection d'objets**, chaque objet représentant un **article** de votre site WordPress qui appartient à la catégorie avec l'ID 3. Voici les principales parties de cette structure JSON :
 
 - `id` : C'est l'identifiant unique de l'article.
-- ``date`` : La date de publication de l'article.
-- ``date_gmt`` : La date de publication en temps universel coordonné (UTC).
-- ``guid`` : Un identifiant global unique pour l'article.
-- ``modified`` : La date de la dernière modification de l'article.
-- ``modified_gmt`` : La date de la dernière modification en temps universel coordonné (UTC).
-- ``slug`` : Le slug de l'article, qui est généralement basé sur le titre.
-- ``status`` : Le statut de l'article (par exemple, "publish" pour un article publié).
-- ``type`` : Le type de contenu (généralement "post" pour un article).
-- ``link`` : Le lien URL de l'article.
-- ``title`` : Un objet contenant le titre de l'article dans différentes versions, notamment le titre brut (non formaté) et le titre formaté pour l'affichage.
-- ``content`` : Un objet contenant le contenu de l'article, y compris le contenu brut et le contenu formaté.
-- ``excerpt`` : Un extrait de l'article.
-- ``author`` : Les détails de l'auteur de l'article, notamment l'identifiant de l'auteur, le nom et d'autres informations.
-- ``featured_media`` : Les détails du média en vedette associé à l'article, s'il y en a un.
-- ``categories`` : Les catégories auxquelles l'article est associé. C'est un tableau d'objets contenant des détails sur chaque catégorie.
-- ``tags`` : Les balises associées à l'article. C'est un tableau d'objets contenant des détails sur chaque balise.
-- ``comment_status`` : Le statut des commentaires pour l'article (par exemple, "open" pour autoriser les commentaires).
-- ``ping_status`` : Le statut de ping pour l'article.
-- ``format`` : Le format de l'article, le cas échéant.
+- `date` : La date de publication de l'article.
+- `date_gmt` : La date de publication en temps universel coordonné (UTC).
+- `guid` : Un identifiant global unique pour l'article.
+- `modified` : La date de la dernière modification de l'article.
+- `modified_gmt` : La date de la dernière modification en temps universel coordonné (UTC).
+- `slug` : Le slug de l'article, qui est généralement basé sur le titre.
+- `status` : Le statut de l'article (par exemple, "publish" pour un article publié).
+- `type` : Le type de contenu (généralement "post" pour un article).
+- `link` : Le lien URL de l'article.
+- `title` : Un objet contenant le titre de l'article dans différentes versions, notamment le titre brut (non formaté) et le titre formaté pour l'affichage.
+- `content` : Un objet contenant le contenu de l'article, y compris le contenu brut et le contenu formaté.
+- `excerpt` : Un extrait de l'article.
+- `author` : Les détails de l'auteur de l'article, notamment l'identifiant de l'auteur, le nom et d'autres informations.
+- `featured_media` : Les détails du média en vedette associé à l'article, s'il y en a un.
+- `categories` : Les catégories auxquelles l'article est associé. C'est un tableau d'objets contenant des détails sur chaque catégorie.
+- `tags` : Les balises associées à l'article. C'est un tableau d'objets contenant des détails sur chaque balise.
+- `comment_status` : Le statut des commentaires pour l'article (par exemple, "open" pour autoriser les commentaires).
+- `ping_status` : Le statut de ping pour l'article.
+- `format` : Le format de l'article, le cas échéant.
 
 ### création d'un plugin pour extraire une liste de cours
 
@@ -163,3 +163,26 @@ Par défaut, l'API REST limite le nombre d'articles renvoyés par page à 10. Po
 Pour paginer les résultats et récupérer tous les articles, vous pouvez utiliser le paramètre per_page dans la requête pour spécifier le nombre d'articles à renvoyer par page. Voici comment vous pouvez le faire :
 
 https://gftnth00.mywhc.ca/eddy/wp-json/wp/v2/posts?categories=3&per_page=26
+
+### Comment appeler un « shortcode » à partir d'un modèle
+
+Dans WordPress, vous pouvez appeler un shortcode directement à partir du code d'un modèle tel que front-page.php en utilisant la fonction **_do_shortcode()_**. Voici comment vous pouvez l'utiliser dans votre code :
+
+```
+<?php
+// Appel du shortcode directement dans le fichier front-page.php
+echo do_shortcode('[votre_shortcode]');
+?>
+```
+
+Remplacez **votre_shortcode** par le **nom de votre shortcode**. Cela exécutera le shortcode et affichera son résultat à l'endroit où vous l'avez placé dans votre fichier **front-page.php**.
+
+### Pour récupérer la bonne adresse adresse d'une image
+
+$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+
+**Pour trouver l'ID d'une image** sur WordPress, vous pouvez suivre ces étapes :
+
+- Dans l'éditeur d'articles/pages : Si vous avez ajouté l'image à un article ou à une page via l'éditeur visuel de WordPress, vous pouvez accéder à l'article ou à la page en mode édition, cliquer sur l'image et voir les détails de l'image dans le panneau de droite. L'ID de l'image sera affiché dans l'URL de la page de modification de l'image.
+- Dans la bibliothèque des médias : Accédez à "Médias" dans le menu de votre tableau de bord WordPress, puis cliquez sur "Bibliothèque". Trouvez l'image que vous recherchez dans la liste des médias. Lorsque vous survolez l'image, un lien "Modifier" apparaîtra. Cliquez sur ce lien pour ouvrir la page de modification de l'image où vous pourrez voir l'ID de l'image dans l'URL.
+- Dans le code source : Si vous avez accès au code source de votre site WordPress, vous pouvez également trouver l'ID de l'image en inspectant le code HTML de la page où l'image est affichée. Cherchez l'attribut id de l'élément <img> correspondant à l'image. L'ID sera généralement une chaîne de chiffres, par exemple id="attachment_123".

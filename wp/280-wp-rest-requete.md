@@ -25,7 +25,7 @@
  
  ## Exemple avec champs personnalisées
 
- ### GET /wp-json/wp/v2/posts?filter[meta_key]={temperature_max}&filter[meta_value]={35} comment faire en javascrupt pour récupérer les résultats de la requete
+ ### GET /wp-json/wp/v2/posts?filter[meta_key]={temperature_max}&filter[meta_value]={35} comment faire en javascript pour récupérer les résultats de la requête
 
 - Pour récupérer les résultats de la requête GET /wp-json/wp/v2/posts avec des filtres sur les champs personnalisés meta_key et meta_value, vous pouvez utiliser l'API Fetch en JavaScript. Voici comment vous pouvez le faire :
 

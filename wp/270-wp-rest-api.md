@@ -123,8 +123,8 @@ add_shortcode('em_destination', 'creation_destinations');
 (function () {
   console.log("rest API")
   // URL de l'API REST de WordPress
-
-  let url = "https://gftnth00.mywhc.ca/tim50/wp-json/wp/v2/posts?categories=3";
+  let categorie = 3;
+  let url = `https://gftnth00.mywhc.ca/tim50/wp-json/wp/v2/posts?categories=${categorie}`;
 
 
   // Effectuer la requête HTTP en utilisant fetch()

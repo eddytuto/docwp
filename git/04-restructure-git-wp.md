@@ -1,4 +1,15 @@
-# Pour restructurer vos dépôts Git selon la structure que vous souhaitez, vous pouvez suivre ces étapes :
+# Pour restructurer plusieurs dépôts en un seul
+
+## Structure actuelle:
+content/
+├── plugin/
+    ├──Carrousel    # Plugin WordPress
+    └── .git/       # Dépôt Git pour le plugin « carrousel »    
+├── theme/          
+    ├──Tp2          # Thème WordPress
+    └── .git/       # Dépôt Git pour le thème tp2
+    
+## Nouvelle structure
 
 content/
 ├── plugin/         # Plugin WordPress
@@ -6,12 +17,13 @@ content/
 └── .git/           # Dépôt Git pour le dossier content
 
 
-1. Créez un nouveau dépôt Git pour le dossier content :
-Allez dans le dossier racine de votre installation WordPress.
+1. Créez un **nouveau dépôt Git** pour le dossier ***content*** :
+Allez dans le dossier ***content*** de votre installation WordPress.
 Initialisez un nouveau dépôt Git avec la commande suivante :
 
 cd chemin/vers/votre/installation/wordpress/content
-git init content
+ou bien en utilisant « ***open in integrated terminal*** »
+`git init`
 2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
 Déplacez les dossiers theme et plugin dans le dossier content.
 

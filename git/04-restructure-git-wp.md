@@ -27,6 +27,23 @@ content/
 └── .git/           # Dépôt Git pour le dossier content
 
 
+## Créer un nouveau dépôt dans la racine du dossier « content »
+
+
+1. Créez un **nouveau dépôt Git** pour le dossier ***content*** :
+Allez dans le dossier ***content*** de votre installation WordPress.
+Initialisez un nouveau dépôt Git avec la commande  :
+
+
+Dans VS code « ***open in integrated terminal*** » sélectionner le dossier « ***content*** »
+`git init`
+
+2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
+Déplacez les dossiers theme et plugin dans le dossier content.
+
+
+Assurez-vous de pousser les modifications vers votre dépôt distant après avoir effectué ces étapes, si nécessaire. Si vous avez déjà du code ou des modifications dans vos anciens dépôts tp2 et carrousel, assurez-vous de les sauvegarder ou de les transférer vers le nouveau dépôt « content » avant de supprimer les anciens dépôts Git.
+
 ## Ajouter un .gitignore pour garder uniquement  le thème/tp2 et plugin/carrousel 
 
 Pour ignorer tous les fichiers et dossiers à l'exception de **theme/tp2** et **plugin/carrousel** dans votre dépôt content, vous pouvez créer un fichier ***.gitignore*** avec les règles appropriées. Voici comment vous pouvez le faire :
@@ -51,19 +68,6 @@ Enregistrez et fermez le fichier .gitignore.
 Après avoir ajouté ce fichier .gitignore, Git ignorera tous les fichiers et dossiers dans le dossier content, sauf ceux spécifiés dans les règles. Cela permettra de garder votre dépôt content propre et de ne suivre que les modifications dans les dossiers theme/tp2 et plugin/carrousel.
 
 
-1. Créez un **nouveau dépôt Git** pour le dossier ***content*** :
-Allez dans le dossier ***content*** de votre installation WordPress.
-Initialisez un nouveau dépôt Git avec la commande  :
-
-
-Dans VS code « ***open in integrated terminal*** » sélectionner le dossier « ***content*** »
-`git init`
-2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
-Déplacez les dossiers theme et plugin dans le dossier content.
-
-
-
-Assurez-vous de pousser les modifications vers votre dépôt distant après avoir effectué ces étapes, si nécessaire. Si vous avez déjà du code ou des modifications dans vos anciens dépôts tp2 et carrousel, assurez-vous de les sauvegarder ou de les transférer vers le nouveau dépôt content avant de supprimer les anciens dépôts Git.
 
 ## Comment récupérer tous les anciens commit des dépôt tp2 et carrousel vers le dépôt content ?
 

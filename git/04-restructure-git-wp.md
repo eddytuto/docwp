@@ -14,13 +14,15 @@ content/
     ├──Tp2          # Thème WordPress
     
     └── .git/       # Dépôt Git pour le thème tp2
-    
+
     
 ## Nouvelle structure
 
 content/
 ├── plugin/         # Plugin WordPress
+
 ├── theme/          # Thème WordPress
+
 └── .git/           # Dépôt Git pour le dossier content
 
 
@@ -37,9 +39,13 @@ Déplacez les dossiers theme et plugin dans le dossier content.
 mv content/theme content/plugin content
 
 content/
+
 ├── plugin/         # Plugin WordPress
+
 ├── theme/          # Thème WordPress
+
 └── .git/           # Dépôt Git pour le dossier content
+
 Assurez-vous de pousser les modifications vers votre dépôt distant après avoir effectué ces étapes, si nécessaire. Si vous avez déjà du code ou des modifications dans vos anciens dépôts tp2 et carrousel, assurez-vous de les sauvegarder ou de les transférer vers le nouveau dépôt content avant de supprimer les anciens dépôts Git.
 
 ## Comment récupérer tous les anciens commit des dépôt tp2 et carrousel vers le dépôt content ?

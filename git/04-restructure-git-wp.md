@@ -27,12 +27,36 @@ content/
 └── .git/           # Dépôt Git pour le dossier content
 
 
+## Ajouter un .gitignore pour garder uniquement  le thème/tp2 et plugin/carrousel 
+
+Pour ignorer tous les fichiers et dossiers à l'exception de **theme/tp2** et **plugin/carrousel** dans votre dépôt content, vous pouvez créer un fichier ***.gitignore*** avec les règles appropriées. Voici comment vous pouvez le faire :
+
+Créez un fichier ***.gitignore*** dans le dossier content de votre dépôt :
+
+`cd chemin/vers/votre/depot/content`
+`.gitignore`
+
+Ajoutez les règles suivantes  dans .gitignore:
+
+**Ignorer tous les fichiers et dossiers sauf theme/tp2 et plugin/carrousel**
+*
+!theme/tp2/
+!plugin/carrousel/
+`Ne pas ignorer les fichiers .gitignore eux-mêmes`
+!.gitignore
+
+Ces règles indiquent à Git d'ignorer tous les fichiers et dossiers (*) sauf theme/tp2/ et plugin/carrousel/. Les lignes commençant par ! excluent les fichiers ou dossiers spécifiés de l'ignorance.
+
+Enregistrez et fermez le fichier .gitignore.
+Après avoir ajouté ce fichier .gitignore, Git ignorera tous les fichiers et dossiers dans le dossier content, sauf ceux spécifiés dans les règles. Cela permettra de garder votre dépôt content propre et de ne suivre que les modifications dans les dossiers theme/tp2 et plugin/carrousel.
+
+
 1. Créez un **nouveau dépôt Git** pour le dossier ***content*** :
 Allez dans le dossier ***content*** de votre installation WordPress.
-Initialisez un nouveau dépôt Git avec la commande suivante :
+Initialisez un nouveau dépôt Git avec la commande  :
 
-cd chemin/vers/votre/installation/wordpress/content
-ou bien en utilisant « ***open in integrated terminal*** »
+
+Dans VS code « ***open in integrated terminal*** » sélectionner le dossier « ***content*** »
 `git init`
 2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
 Déplacez les dossiers theme et plugin dans le dossier content.
@@ -67,26 +91,3 @@ Répétez cette étape pour toutes les branches que vous souhaitez fusionner dep
 Si vous avez d'autres branches ou commits dans les dépôts tp2 et carrousel que vous souhaitez récupérer, répétez les étapes 2 et 3 pour ces branches ou commits.
 Une fois que vous avez terminé, vous aurez récupéré tous les anciens commits des dépôts tp2 et carrousel vers votre dépôt content. Assurez-vous de tester et de vérifier que tout fonctionne correctement après avoir effectué ces opérations.
 
-
-## Ajouter un .gitignore pour garder uniquement  le thème/tp2 et plugin/carrousel en ignorant les autres fichiers ou autres dossiers dans  content
-
-Pour ignorer tous les fichiers et dossiers à l'exception de **theme/tp2** et **plugin/carrousel** dans votre dépôt content, vous pouvez créer un fichier ***.gitignore*** avec les règles appropriées. Voici comment vous pouvez le faire :
-
-Créez un fichier ***.gitignore*** dans le dossier content de votre dépôt :
-
-`cd chemin/vers/votre/depot/content`
-`.gitignore`
-
-Ajoutez les règles suivantes  dans .gitignore:
-
-**Ignorer tous les fichiers et dossiers sauf theme/tp2 et plugin/carrousel**
-*
-!theme/tp2/
-!plugin/carrousel/
-`Ne pas ignorer les fichiers .gitignore eux-mêmes`
-!.gitignore
-
-Ces règles indiquent à Git d'ignorer tous les fichiers et dossiers (*) sauf theme/tp2/ et plugin/carrousel/. Les lignes commençant par ! excluent les fichiers ou dossiers spécifiés de l'ignorance.
-
-Enregistrez et fermez le fichier .gitignore.
-Après avoir ajouté ce fichier .gitignore, Git ignorera tous les fichiers et dossiers dans le dossier content, sauf ceux spécifiés dans les règles. Cela permettra de garder votre dépôt content propre et de ne suivre que les modifications dans les dossiers theme/tp2 et plugin/carrousel.

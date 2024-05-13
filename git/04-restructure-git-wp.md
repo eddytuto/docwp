@@ -19,6 +19,7 @@ content/
 ## Nouvelle structure
 
 content/
+
 ├── plugin/         # Plugin WordPress
 
 ├── theme/          # Thème WordPress
@@ -36,15 +37,7 @@ ou bien en utilisant « ***open in integrated terminal*** »
 2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
 Déplacez les dossiers theme et plugin dans le dossier content.
 
-mv content/theme content/plugin content
 
-content/
-
-├── plugin/         # Plugin WordPress
-
-├── theme/          # Thème WordPress
-
-└── .git/           # Dépôt Git pour le dossier content
 
 Assurez-vous de pousser les modifications vers votre dépôt distant après avoir effectué ces étapes, si nécessaire. Si vous avez déjà du code ou des modifications dans vos anciens dépôts tp2 et carrousel, assurez-vous de les sauvegarder ou de les transférer vers le nouveau dépôt content avant de supprimer les anciens dépôts Git.
 

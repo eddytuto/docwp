@@ -88,12 +88,10 @@ wp-content/themes/*/
 !wp-content/plugins/
 wp-content/plugins/*/
 !wp-content/plugins/carrousel/
-```
-
-### Ne pas ignorer les fichiers .gitignore et readme.md à la racine
+// Ne pas ignorer les fichiers .gitignore et readme.md à la racine
 !.gitignore
 !readme.md
-
+```
 
 ### Explications des règles .gitignore :
 

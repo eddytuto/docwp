@@ -77,16 +77,18 @@ En suivant ces étapes, vous aurez intégré les dépôts tp2 et carrousel dans 
 ## Le Fichier .gitignore
 
 ### Ignorer tous les dossiers sauf themes/tp2 et plugins/carrousel
+
+``
 /*/
 !wp-content/
 wp-content/*/
 !wp-content/themes/
 wp-content/themes/*/
 !wp-content/themes/tp2/
-
 !wp-content/plugins/
 wp-content/plugins/*/
 !wp-content/plugins/carrousel/
+``
 
 ### Ne pas ignorer les fichiers .gitignore et readme.md à la racine
 !.gitignore

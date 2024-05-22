@@ -1,97 +1,100 @@
-# Pour restructurer plusieurs dépôts en un seul
+# fusionner deux dépôts ensemble
 
-## Structure actuelle:
-content/
+Pour intégrer les dépôts **tp2** et **carrousel** dans un seul dépôt à l'intérieur de **wp-content** sous les chemins **wp-content/themes/tp2** et **wp-content/plugins/carrousel**, vous pouvez utiliser les **sous-modules Git**. 
+Voici les étapes détaillées :
 
-├── plugin/
-
-    ├──Carrousel    # Plugin WordPress
-
-    └── .git/       # Dépôt Git pour le plugin « carrousel »    
-
-├── theme/          
-
-    ├──Tp2          # Thème WordPress
-    
-    └── .git/       # Dépôt Git pour le thème tp2
-
-    
-## Nouvelle structure
-
-content/
-
-├── plugin/         # Plugin WordPress
-
-├── theme/          # Thème WordPress
-
-└── .git/           # Dépôt Git pour le dossier content
+## Étapes pour intégrer les dépôts comme sous-modules
 
 
-## Créer un nouveau dépôt dans la racine du dossier « content »
+### Créer le dépôt principal :
+
+- Dans le dossier **wp-content** créer un dépôt
+- `git init`
+
+### Ajouter les sous-modules :
+
+- Ajoutez les dépôts existants tp2 et carrousel en tant que sous-modules dans les chemins spécifiés.
+- **Ajouter le thème en tant que sous-module**
+- `git submodule add https://github.com/utilisateur/theme-tp2.git wp-content/themes/tp2`
+- **Ajouter le plugin en tant que sous-module**
+- `git submodule add https://github.com/utilisateur/plugin-carrousel.git wp-content/plugins/carrousel`
+
+### Initialiser et mettre à jour les sous-modules :
+
+Initialisez les sous-modules et mettez-les à jour pour qu'ils pointent vers le bon commit.
+
+- `git submodule init`
+- `git submodule update`
+
+### Valider les modifications :
+
+Validez les changements dans le dépôt principal pour inclure les références aux sous-modules.
+
+- `git add .`
+- `git commit -m` 
+- "Ajout des sous-modules pour le thème tp2 et le plugin carrousel"
+
+### Gestion des sous-modules
+- Cloner le dépôt avec les sous-modules :
+- Lors du clonage du dépôt principal, assurez-vous d'inclure les sous-modules.
+- `git clone --recurse-submodules https://github.com/utilisateur/4w4-wp-content.git`
+  
+### Mettre à jour les sous-modules :
+- Pour mettre à jour les sous-modules à leurs dernières versions, utilisez :
+- `git submodule update --remote`
+- Exemple de structure de répertoires après l'ajout des sous-modules
+
+wp/
+├── wp-content/
+│   ├── themes/
+│   │   └── tp2/        # Sous-module pour le thème tp2
+│   └── plugins/
+│       └── carrousel/  # Sous-module pour le plugin carrousel
+└── .gitmodules         # Fichier de configuration des sous-modules
+
+### Configuration du fichier .gitmodules
+
+Le fichier .gitmodules dans le dépôt principal ressemblera à ceci :
+
+[submodule "wp-content/themes/tp2"]
+    path = wp-content/themes/tp2
+    url = https://github.com/utilisateur/theme-tp2.git
+[submodule "wp-content/plugins/carrousel"]
+    path = wp-content/plugins/carrousel
+    url = https://github.com/utilisateur/plugin-carrousel.git
+En suivant ces étapes, vous aurez intégré les dépôts tp2 et carrousel dans votre dépôt principal, chacun situé dans les sous-répertoires appropriés à l'intérieur de wp-content. Les sous-modules permettent une gestion modulaire et indépendante de chaque composant tout en les rendant facilement accessibles au sein du projet principal.
 
 
-1. Créez un **nouveau dépôt Git** pour le dossier ***content*** :
-Allez dans le dossier ***content*** de votre installation WordPress.
-Initialisez un nouveau dépôt Git avec la commande  :
+## Le Fichier .gitignore
 
+### Ignorer tous les dossiers sauf themes/tp2 et plugins/carrousel
+/*/
+!wp-content/
+wp-content/*/
+!wp-content/themes/
+wp-content/themes/*/
+!wp-content/themes/tp2/
 
-Dans VS code « ***open in integrated terminal*** » sélectionner le dossier « ***content*** »
-`git init`
+!wp-content/plugins/
+wp-content/plugins/*/
+!wp-content/plugins/carrousel/
 
-2. Déplacez les dossiers theme et plugin dans le nouveau dépôt content :
-Déplacez les dossiers theme et plugin dans le dossier content.
-
-
-Assurez-vous de pousser les modifications vers votre dépôt distant après avoir effectué ces étapes, si nécessaire. Si vous avez déjà du code ou des modifications dans vos anciens dépôts tp2 et carrousel, assurez-vous de les sauvegarder ou de les transférer vers le nouveau dépôt « content » avant de supprimer les anciens dépôts Git.
-
-## Ajouter un .gitignore pour garder uniquement  le thème/tp2 et plugin/carrousel 
-
-Pour ignorer tous les fichiers et dossiers à l'exception de **theme/tp2** et **plugin/carrousel** dans votre dépôt content, vous pouvez créer un fichier ***.gitignore*** avec les règles appropriées. Voici comment vous pouvez le faire :
-
-Créez un fichier ***.gitignore*** dans le dossier content de votre dépôt :
-
-`cd chemin/vers/votre/depot/content`
-`.gitignore`
-
-Ajoutez les règles suivantes  dans .gitignore:
-
-**Ignorer tous les fichiers et dossiers sauf theme/tp2 et plugin/carrousel**
-*
-!theme/tp2/
-!plugin/carrousel/
-`Ne pas ignorer les fichiers .gitignore eux-mêmes`
+### Ne pas ignorer les fichiers .gitignore et readme.md à la racine
 !.gitignore
-
-Ces règles indiquent à Git d'ignorer tous les fichiers et dossiers (*) sauf theme/tp2/ et plugin/carrousel/. Les lignes commençant par ! excluent les fichiers ou dossiers spécifiés de l'ignorance.
-
-Enregistrez et fermez le fichier .gitignore.
-Après avoir ajouté ce fichier .gitignore, Git ignorera tous les fichiers et dossiers dans le dossier content, sauf ceux spécifiés dans les règles. Cela permettra de garder votre dépôt content propre et de ne suivre que les modifications dans les dossiers theme/tp2 et plugin/carrousel.
+!readme.md
 
 
+### Explications des règles .gitignore :
 
-## Comment récupérer tous les anciens commit des dépôt tp2 et carrousel vers le dépôt content ?
+- /*/ : Ignore tous les dossiers à la racine du dépôt.
+- !wp-content/ : N'ignore pas le dossier wp-content.
+- wp-content/*/ : Ignore tous les sous-dossiers de wp-content.
+- !wp-content/themes/ : N'ignore pas le dossier themes à l'intérieur de wp-content.
+- wp-content/themes/*/ : Ignore tous les sous-dossiers de themes.
+- !wp-content/themes/tp2/ : N'ignore pas le dossier tp2 à l'intérieur de wp-content/themes.
+- !wp-content/plugins/ : N'ignore pas le dossier plugins à l'intérieur de wp-content.
+- wp-content/plugins/*/ : Ignore tous les sous-dossiers de plugins.
+- !wp-content/plugins/carrousel/ : N'ignore pas le dossier carrousel à l'intérieur de wp-content/plugins.
+- !.gitignore et !readme.md : N'ignore pas les fichiers .gitignore et readme.md à la racine du dépôt.
 
-Pour récupérer tous les anciens commits des dépôts tp2 et carrousel vers le dépôt content, vous pouvez suivre ces étapes :
-
-1. Ajoutez les anciens dépôts comme références distantes :
-Tout d'abord, assurez-vous que vous avez accès aux anciens dépôts tp2 et carrousel.
-Dans le dossier content, ajoutez les anciens dépôts comme références distantes.
-
-`git remote add tp2 /chemin/vers/tp2`
-`git remote add carrousel /chemin/vers/carrousel`
-
-2. Récupérez les branches et les commits depuis les dépôts distants :
-Récupérez toutes les branches et les commits des dépôts tp2 et carrousel.
-
-`git fetch tp2`
-`git fetch carrousel`
-3. Fusionnez les branches souhaitées dans votre dépôt content :
-Une fois que vous avez récupéré les branches, vous pouvez fusionner les branches que vous souhaitez conserver dans votre dépôt content. Assurez-vous d'effectuer ces fusions dans des branches distinctes ou dans des emplacements appropriés de votre dépôt content pour éviter tout écrasement de code existant.Par exemple, pour fusionner la branche principale master du dépôt tp2 dans une branche tp2-master de votre dépôt content :
-
-`git checkout -b tp2-master tp2/master`
-Répétez cette étape pour toutes les branches que vous souhaitez fusionner depuis les dépôts tp2 et carrousel.
-
-4. Répétez le processus pour tous les autres commits ou branches nécessaires :
-Si vous avez d'autres branches ou commits dans les dépôts tp2 et carrousel que vous souhaitez récupérer, répétez les étapes 2 et 3 pour ces branches ou commits.
-Une fois que vous avez terminé, vous aurez récupéré tous les anciens commits des dépôts tp2 et carrousel vers votre dépôt content. Assurez-vous de tester et de vérifier que tout fonctionne correctement après avoir effectué ces opérations.
-
+Avec ce fichier .gitignore, seuls les dossiers wp-content/themes/tp2 et wp-content/plugins/carrousel seront suivis dans Git, et tout le reste sera ignoré. Cela assure que votre dépôt principal contiendra uniquement les sous-dépôts désirés et les fichiers importants tels que .gitignore et readme.md.

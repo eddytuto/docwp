@@ -1,4 +1,4 @@
-# fusionner deux dépôts ensemble
+# Fusionner deux dépôts ensemble
 
 Pour intégrer les dépôts **tp2** et **carrousel** dans un seul dépôt à l'intérieur de **wp-content** sous les chemins **wp-content/themes/tp2** et **wp-content/plugins/carrousel**, vous pouvez utiliser les **sous-modules Git**. 
 Voici les étapes détaillées :
@@ -44,24 +44,33 @@ Validez les changements dans le dépôt principal pour inclure les références 
 - `git submodule update --remote`
 - Exemple de structure de répertoires après l'ajout des sous-modules
 
+
 wp/
+
 ├── wp-content/
+
 │   ├── themes/
+
 │   │   └── tp2/        # Sous-module pour le thème tp2
+
 │   └── plugins/
+
 │       └── carrousel/  # Sous-module pour le plugin carrousel
+
 └── .gitmodules         # Fichier de configuration des sous-modules
+
 
 ### Configuration du fichier .gitmodules
 
 Le fichier .gitmodules dans le dépôt principal ressemblera à ceci :
 
-[submodule "wp-content/themes/tp2"]
-    path = wp-content/themes/tp2
-    url = https://github.com/utilisateur/theme-tp2.git
-[submodule "wp-content/plugins/carrousel"]
-    path = wp-content/plugins/carrousel
-    url = https://github.com/utilisateur/plugin-carrousel.git
+- [submodule "wp-content/themes/tp2"]
+  - path = wp-content/themes/tp2
+  - url = https://github.com/utilisateur/theme-tp2.git
+- [submodule "wp-content/plugins/carrousel"]
+  - path = wp-content/plugins/carrousel
+  - url = https://github.com/utilisateur/plugin-carrousel.git
+
 En suivant ces étapes, vous aurez intégré les dépôts tp2 et carrousel dans votre dépôt principal, chacun situé dans les sous-répertoires appropriés à l'intérieur de wp-content. Les sous-modules permettent une gestion modulaire et indépendante de chaque composant tout en les rendant facilement accessibles au sein du projet principal.
 
 

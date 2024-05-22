@@ -49,13 +49,13 @@ wp/
 
 ├── wp-content/
 
-│   ├── themes/
+    ├── themes/
 
-│   │   └── tp2/        # Sous-module pour le thème tp2
+        └── tp2/        # Sous-module pour le thème tp2
 
-│   └── plugins/
+    └── plugins/
 
-│       └── carrousel/  # Sous-module pour le plugin carrousel
+        └── carrousel/  # Sous-module pour le plugin carrousel
 
 └── .gitmodules         # Fichier de configuration des sous-modules
 

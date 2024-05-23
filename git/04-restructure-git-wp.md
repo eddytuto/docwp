@@ -107,3 +107,110 @@ wp-content/plugins/*/
 - !.gitignore et !readme.md : N'ignore pas les fichiers .gitignore et readme.md à la racine du dépôt.
 
 Avec ce fichier .gitignore, seuls les dossiers wp-content/themes/tp2 et wp-content/plugins/carrousel seront suivis dans Git, et tout le reste sera ignoré. Cela assure que votre dépôt principal contiendra uniquement les sous-dépôts désirés et les fichiers importants tels que .gitignore et readme.md.
+
+## Réaliser un commit sur la structure générale  « wp-content »
+
+Pour réaliser un commit sur la structure générale après avoir effectué des modifications dans les sous-dépôts **tp2** et **carrousel**, vous devez suivre quelques étapes pour vous assurer que les changements dans les sous-dépôts sont bien intégrés et référencés correctement dans le dépôt principal **wp-content**. Voici le processus détaillé :
+
+### Étapes à suivre :
+
+#### Naviguer dans le sous-dépôt et valider valider les changements :
+
+- Supposons que vous avez fait des modifications dans le sous-dépôt tp2. Naviguez dans le répertoire de ce sous-dépôt et valider les changements.
+- cd wp-content/themes/tp2
+- `git add .`
+- `git commit -m "Description des modifications effectuées dans tp2"`
+- Pousser les changements vers le dépôt distant du sous-dépôt (si applicable) :
+- git push 4w4 tp2  // Assurez-vous de spécifier la branche correcte
+
+#### Revenir au dépôt principal et mettre à jour la référence du sous-dépôt :
+
+- Retournez dans le dépôt principal et mettez à jour la référence du sous-dépôt tp2.
+- cd ../../../  # Remontez au répertoire racine du dépôt principal
+- `git add wp-content/themes/tp2`
+- Valider les changements dans le dépôt principal :
+- Validez les changements dans le dépôt principal pour inclure la nouvelle référence du sous-dépôt.
+- `git commit -m "Mettre à jour la référence du sous-dépôt tp2"`
+- Pousser les changements vers le dépôt distant principal :
+- git push wp-content main  tp2
+
+### Exemple complet :
+
+Voici un exemple complet de toutes les commandes à exécuter, partant du principe que vous avez modifié le sous-dépôt tp2.
+
+
+#### Naviguer dans le sous-dépôt et valider les changements
+- cd wp-content/themes/tp2
+- git add .
+- git commit -m "Description des modifications effectuées dans tp2"
+- git push origin main  # Poussez les changements vers le dépôt distant du sous-dépôt
+
+-Revenir au dépôt principal
+cd ../../../
+
+- Mettre à jour la référence du sous-dépôt dans le dépôt principal
+- git add wp-content/themes/tp2
+- `git commit -m "Mettre à jour la référence du sous-dépôt tp2`
+- `git push 4w4 main`  // Poussez les changements vers le dépôt distant principal
+
+### Note sur les sous-dépôts :
+
+- Les sous-modules Git enregistrent des références spécifiques à des commits dans les sous-dépôts. 
+- Cela signifie que lorsque vous mettez à jour un sous-module, vous pointez le dépôt principal vers un commit spécifique dans le sous-dépôt. 
+- Assurez-vous toujours que les sous-dépôts sont à jour avec les derniers commits avant de faire des validations dans le dépôt principal.
+
+À partir du dépôt principal que ce passe t-il si on exécute la commande git log
+ChatGPT
+Lorsque vous exécutez la commande git log à partir du dépôt principal, vous verrez l'historique des commits du dépôt principal lui-même. Cet historique inclut tous les commits effectués directement dans le dépôt principal, y compris ceux qui mettent à jour les références des sous-modules (par exemple, lorsque vous avez fait des changements dans tp2 ou carrousel et que vous avez mis à jour leurs références dans le dépôt principal).
+
+Exemple de sortie de git log
+La sortie typique de git log dans le dépôt principal pourrait ressembler à ceci :
+
+plaintext
+Copier le code
+commit 1a2b3c4d5e6f7g8h9i0jklmnopqrstuv
+Author: Votre Nom <votrenom@example.com>
+Date:   Tue May 21 12:34:56 2024 +0200
+
+    Mettre à jour la référence du sous-dépôt tp2
+
+commit 9i8u7y6t5r4e3w2q1p0onmlkjihgfedcb
+Author: Votre Nom <votrenom@example.com>
+Date:   Mon May 20 11:22:33 2024 +0200
+
+    Mettre à jour la référence du sous-dépôt carrousel
+
+commit a1b2c3d4e5f6g7h8i9j0klmnopqrstuvw
+Author: Votre Nom <votrenom@example.com>
+Date:   Sun May 19 10:11:22 2024 +0200
+
+    Ajouter des sous-modules pour le thème tp2 et le plugin carrousel
+Détails des commits de sous-modules
+Les commits concernant les sous-modules ne montrent pas directement les changements effectués dans les fichiers des sous-modules eux-mêmes. Au lieu de cela, ils montrent que la référence (SHA-1) du sous-module a été mise à jour. Par exemple, un commit de mise à jour de sous-module peut ressembler à ceci :
+
+plaintext
+Copier le code
+commit 1a2b3c4d5e6f7g8h9i0jklmnopqrstuv
+Author: Votre Nom <votrenom@example.com>
+Date:   Tue May 21 12:34:56 2024 +0200
+
+    Mettre à jour la référence du sous-dépôt tp2
+
+diff --git a/wp-content/themes/tp2 b/wp-content/themes/tp2
+index abcdef1..1234567 160000
+--- a/wp-content/themes/tp2
++++ b/wp-content/themes/tp2
+@@ -1 +1 @@
+-Subproject commit abcdef1234567890abcdef1234567890abcdef12
++Subproject commit 1234567890abcdef1234567890abcdef12345678
+Historique des sous-dépôts
+Si vous souhaitez voir l'historique des commits dans un sous-dépôt spécifique, vous devez naviguer dans ce sous-dépôt et exécuter git log à partir de là.
+
+sh
+Copier le code
+cd wp-content/themes/tp2
+git log
+Cela affichera l'historique des commits pour le sous-dépôt tp2.
+
+Conclusion
+En résumé, git log dans le dépôt principal montre l'historique des commits du dépôt principal, incluant les mises à jour des références des sous-dépôts. Pour voir les détails des changements dans les sous-dépôts eux-mêmes, il faut exécuter git log dans le répertoire de chaque sous-dépôt.

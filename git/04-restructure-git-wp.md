@@ -15,7 +15,7 @@ Pour intégrer les dépôts **tp2**, **carrousel**, **voyage**, **les_posts** da
 
 ```IMPORTANT``` **Surtout**, ne réaliser aucune des commandes suivantes sur votre dossier **wp-content** actuel mais plutôt sur une **copie** de ce dossier.
 Nous allons premièrement créer un dossier vide **\_wp-content** .
-Une fois que **\_wp-content** contiendra l'équivalent du dossier **wp-content** nous échangerons les noms de ces deux dossiers.
+Une fois que **\_wp-content** contiendra l'équivalent du dossier **wp-content** nous échangerons les noms de ces deux dossiers. Créer aussi les deux dossiers vide **_wp-content/themes** et **_wp-content/plugins**
 
 - Dans le dossier **\_wp-content** créer un dépôt
 - `git init`

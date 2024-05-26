@@ -13,7 +13,7 @@ Pour intégrer les dépôts **tp2**, **carrousel**, **voyage**, **les_posts** da
 
 ### Créer le dépôt principal :
 
-**IMPORTANT** **Surtout**, ne réaliser aucune des commandes suivantes sur votre dossier **wp-content** mais plutôt sur une **copie** de ce dossier.
+```IMPORTANT``` **Surtout**, ne réaliser aucune des commandes suivantes sur votre dossier **wp-content** mais plutôt sur une **copie** de ce dossier.
 Nous allons premièrement créer un dossier vide **\_wp-content** .
 Une fois que **\_wp-content** contiendra l'équivalent du dossier **wp-content** nous échangerons les noms de ces deux dossiers.
 

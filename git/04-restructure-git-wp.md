@@ -3,9 +3,9 @@
 Pour intégrer les dépôts **tp2**, **carrousel**, **voyage**, **les_posts** dans un seul dépôt à l'intérieur de **wp-content** sous les chemins:
 
 - **wp-content/themes/tp2** // _sous-module_
-- **wp-content/plugins/carrousel** // sous-module
-- **wp-content/plugins/voyage** // sous-module
-- **wp-content/plugins/les_posts**, // sous-module.
+- **wp-content/plugins/carrousel** // _sous-module_
+- **wp-content/plugins/voyage** // _sous-module_
+- **wp-content/plugins/les_posts**, // _sous-module_.
 
 **Voici les étapes détaillées**:
 

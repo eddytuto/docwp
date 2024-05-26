@@ -1,7 +1,7 @@
 # Fusionner deux dépôts ensemble
 
 Pour intégrer les dépôts **tp2**, **carrousel**, **voyage**, **les_posts** dans un seul dépôt à l'intérieur de **wp-content** sous les chemins:
-
+- **wp-content** // le dépôt principal
 - **wp-content/themes/tp2** // _sous-module_
 - **wp-content/plugins/carrousel** // _sous-module_
 - **wp-content/plugins/voyage** // _sous-module_

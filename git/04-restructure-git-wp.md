@@ -33,7 +33,7 @@ Pour réaliser les commandes suivantes, sur Github, vous devez fusionner avec **
 ### Initialiser et mettre à jour les sous-modules :
 
 Initialisez les sous-modules et mettez-les à jour pour qu'ils pointent vers le bon commit.
-Ces commandes sont exécutées à partir de **\_wp-content**
+Ces commandes sont exécutées à partir de **_wp-content**
 
 - `git submodule init` // est exécutée une seule fois
 - `git submodule update` // pour chaque ajout de nouveaux submodules on exécutera cette commande
@@ -133,7 +133,7 @@ Pour réaliser un commit sur la structure générale après avoir effectué des 
 - Validez les changements dans le dépôt principal pour inclure la nouvelle référence du sous-dépôt.
 - `git commit -m "Mettre à jour la référence du sous-dépôt tp2"`
 - Pousser les changements vers le dépôt distant principal :
-- git push 4w4 main
+- `git push 4w4 main`
 
 
 ### Note sur les sous-dépôts :

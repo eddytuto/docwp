@@ -44,19 +44,8 @@ Validez les changements dans le dépôt principal pour inclure les références 
 
 - `git add .`
 - `git commit -m`
-- "Ajout des sous-modules pour le thème tp2 et le plugin carrousel"
--
 
-### Gestion des sous-modules
 
-- Cloner le dépôt avec les sous-modules :
-- Lors du clonage du dépôt principal, assurez-vous d'inclure les sous-modules.
-- `git clone --recurse-submodules https://github.com/eddytuto/4w4-2024-gr2.git`
-
-### Mettre à jour les sous-modules :
-
-- Pour mettre à jour les sous-modules à leurs dernières versions, utilisez :
-- `git submodule update --remote`
 - Exemple de structure de répertoires après l'ajout des sous-modules
 
 wp/
@@ -126,44 +115,26 @@ Pour réaliser un commit sur la structure générale après avoir effectué des 
 
 ### Étapes à suivre :
 
-#### Naviguer dans le sous-dépôt et valider valider les changements :
+#### Naviguer dans le sous-dépôt et valider  les changements :
 
 - Supposons que vous avez fait des modifications dans le sous-dépôt tp2. Naviguez dans le répertoire de ce sous-dépôt et valider les changements.
 - cd wp-content/themes/tp2
 - `git add .`
 - `git commit -m "Description des modifications effectuées dans tp2"`
-- Pousser les changements vers le dépôt distant du sous-dépôt (si applicable) :
-- git push 4w4 tp2 // Assurez-vous de spécifier la branche correcte
+- Pousser les changements vers le dépôt distant du sous-dépôt :
+- ``git push 4w4 tp2` // Assurez-vous de spécifier la branche correcte
 
 #### Revenir au dépôt principal et mettre à jour la référence du sous-dépôt :
 
 - Retournez dans le dépôt principal et mettez à jour la référence du sous-dépôt tp2.
 - cd ../../../ # Remontez au répertoire racine du dépôt principal
-- `git add wp-content/themes/tp2`
+- `git add --all`
 - Valider les changements dans le dépôt principal :
 - Validez les changements dans le dépôt principal pour inclure la nouvelle référence du sous-dépôt.
 - `git commit -m "Mettre à jour la référence du sous-dépôt tp2"`
 - Pousser les changements vers le dépôt distant principal :
-- git push wp-content main tp2
+- git push 4w4 main
 
-### Exemple complet :
-
-Voici un exemple complet de toutes les commandes à exécuter, partant du principe que vous avez modifié le sous-dépôt tp2.
-
-#### Naviguer dans le sous-dépôt et valider les changements
-
-- cd wp-content/themes/tp2
-- git add .
-- git commit -m "Description des modifications effectuées dans tp2"
-- git push 4w4 main # Poussez les changements vers le dépôt distant du sous-dépôt
-
--Revenir au dépôt principal
-cd ../../../
-
-- Mettre à jour la référence du sous-dépôt dans le dépôt principal
-- git add wp-content/themes/tp2
-- `git commit -m "Mettre à jour la référence du sous-dépôt tp2`
-- `git push 4w4 main` // Poussez les changements vers le dépôt distant principal
 
 ### Note sur les sous-dépôts :
 

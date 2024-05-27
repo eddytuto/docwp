@@ -65,13 +65,14 @@ wp/
 ### Configuration du fichier .gitmodules
 
 Le fichier .gitmodules dans le dépôt principal ressemblera à ceci :
-
-- [submodule "wp-content/themes/tp2"]
-  - path = wp-content/themes/tp2
-  - url = https://github.com/utilisateur/theme-tp2.git
-- [submodule "wp-content/plugins/carrousel"]
-  - path = wp-content/plugins/carrousel
-  - url = https://github.com/utilisateur/plugin-carrousel.git
+```
+[submodule "plugins/carrousel"]
+	path = plugins/carrousel
+	url = https://github.com/eddytuto/carrousel-2024-gr1
+[submodule "themes/tp2"]
+	path = themes/tp2
+	url = https://github.com/eddytuto/4w4-2024-gr1
+```
 
 En suivant ces étapes, vous aurez intégré les dépôts tp2 et carrousel dans votre dépôt principal, chacun situé dans les sous-répertoires appropriés à l'intérieur de wp-content. Les sous-modules permettent une gestion modulaire et indépendante de chaque composant tout en les rendant facilement accessibles au sein du projet principal.
 
@@ -122,7 +123,7 @@ Pour réaliser un commit sur la structure générale après avoir effectué des 
 - `git add .`
 - `git commit -m "Description des modifications effectuées dans tp2"`
 - Pousser les changements vers le dépôt distant du sous-dépôt :
-- ``git push 4w4 tp2` // Assurez-vous de spécifier la branche correcte
+- `git push 4w4 tp2` // Assurez-vous de spécifier la branche correcte
 
 #### Revenir au dépôt principal et mettre à jour la référence du sous-dépôt :
 

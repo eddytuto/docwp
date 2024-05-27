@@ -34,6 +34,7 @@ Pour réaliser les commandes suivantes, sur Github, vous devez fusionner avec **
 
 Initialisez les sous-modules et mettez-les à jour pour qu'ils pointent vers le bon commit.
 Ces commandes sont exécutées à partir de **_wp-content**
+Cependant, si vous ajoutez un nouveau sous-module à votre dépôt avec **git submodule add**, vous n'avez **pas besoin d'exécuter git submodule init**  et **git submodule update** pour ce sous-module spécifique, car la commande add l'initialise automatiquement. Mais si quelqu'un d'autre clone votre dépôt, il devra exécuter git submodule init et git submodule update pour obtenir le sous-module.
 
 - `git submodule init` // est exécutée une seule fois
 - `git submodule update` // pour chaque ajout de nouveaux submodules on exécutera cette commande

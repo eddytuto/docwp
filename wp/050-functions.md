@@ -291,7 +291,6 @@ Organiser dans une fonction dédiée :
 
 Créer une fonction pour encapsuler tous les appels à add_theme_support() afin de maintenir votre fichier functions.php bien organisé et évolutif.
 
-``
 // Fonction pour ajouter les supports de thème
 function mon_theme_supports() {
 // Activer le support des images mises en avant
@@ -320,6 +319,5 @@ add_theme_support('post-thumbnails');
 }
 
 // Accrocher la fonction au hook after_setup_theme
-add_action('after_setup_theme', 'mon_theme_supports');
 
-``
+- add_action('after_setup_theme', 'mon_theme_supports');

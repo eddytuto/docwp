@@ -279,3 +279,47 @@ add_action( 'wp_enqueue_scripts', 'enqueue_noto_emoji' );
 - Cette fonction ajoutera le support pour les logos personnalisés pour les thèmes qui le prennent en charge.
 - Vous pouvez ensuite utiliser le Customizer de WordPress pour ajouter et gérer le logo de votre site.
 - the_custom_logo(); sera utilisé dans le thème pour intégrer le logo
+
+### Voici un exemple de la manière correcte et optimale d'utiliser add_theme_support() dans le fichier functions.php :
+
+#### Étapes recommandées :
+
+#### Utiliser un hook after_setup_theme :
+
+Il est recommandé d'attacher **add_theme_support()** à l'action **after_setup_theme**, qui est spécifiquement destinée à l'initialisation des fonctionnalités du thème. Cela garantit que le support des fonctionnalités est ajouté au moment approprié du cycle de vie de WordPress.
+Organiser dans une fonction dédiée :
+
+Créer une fonction pour encapsuler tous les appels à add_theme_support() afin de maintenir votre fichier functions.php bien organisé et évolutif.
+
+``
+// Fonction pour ajouter les supports de thème
+function mon_theme_supports() {
+// Activer le support des images mises en avant
+add_theme_support('post-thumbnails');
+
+    // Activer le support des titres dynamiques (WordPress 4.1+)
+    add_theme_support('title-tag');
+
+    // Activer le support des menus personnalisés
+    add_theme_support('menus');
+
+    // Activer le support des formats de publication
+    add_theme_support('post-formats', array('aside', 'gallery', 'quote', 'image', 'video'));
+
+    // Activer le support des HTML5 pour certains éléments du thème
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+
+    // Activer le support du logo personnalisé
+    add_theme_support('custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+
+}
+
+// Accrocher la fonction au hook after_setup_theme
+add_action('after_setup_theme', 'mon_theme_supports');
+
+``
